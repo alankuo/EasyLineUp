@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=endge">
+	<title>Easy LineUp</title>
+
+	<!-- CSS -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<h1 class="welcome-msg" align="center">Welcome to <span class="primary">EasyLineUp!!</span></h1>
+	<div class="header">
+		<h2>Login</h2>
+	</div>
+	<form method="post" action="../ctrl/action.php">
+		<div>
+			<label>Who Are You:</label>
+			<input type="radio" id="passenger"
+			name="identity" value="passenger" checked>
+			<label for="contactChoice1">Student</label>
+
+			<input type="radio" id="driver"
+			name="identity" value="driver">
+			<label for="contactChoice2">Driver</label>
+		</div>
+		<div class="input-group">
+			<label>Username</label>
+			<input type="text" name="username" >
+		</div>
+		<div class="input-group">
+			<label>Password</label>
+			<input type="password" name="password">
+		</div>
+		<div class="input-group">
+			<button type="submit" class="btn" name="login_btn">Login</button>
+		</div>
+		<p>
+			Not yet a member? <a href="register.html">Sign up</a>
+		</p>
+		<p>
+			Forgot your password? <a href="reset.html">Reset Password</a>
+		</p>
+	</form>
+
+	<footer>
+		<p>Easy LineUp &copy; 2018, All Rights Reserved</p>
+	</footer>
+</body>
+
+</html>

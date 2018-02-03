@@ -12,9 +12,9 @@ body{
 	width: 350px;
 	margin: 50px auto 0px;
 	color: white;
-	background: #ec5c11;
+	background: #5F9EA0;
 	text-align: center;
-	border: 1px solid #ec5c11;
+	border: 1px solid #5F9EA0;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
 	padding: 20px;
@@ -143,5 +143,5 @@ ul.none {
 
 .ngbar-items ul li.active a, .ngbar-items ul li a:hover {
 	color:#fff;
-	background:#f00;
+	background:#5F9EA0;
 }
