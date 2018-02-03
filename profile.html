@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=endge">
+	<title>Easy LineUp</title>
+
+	<!-- CSS -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<!--<h1 class="welcome-msg" align="center">Edit Your <span class="primary">Profile</span></h1>-->
+	<div class="header">
+		<h2>Edit Your Profile</h2>
+	</div>
+	<form method="post" action="../ctrl/action.php">
+    <div class="input-group">
+      <label>Username</label>
+      <input type="text" name="username" value="johndoe">
+    </div>
+    <div class="input-group">
+      <label>Phone</label>
+      <input type="text" name="phone" value="(123)456-7890" placeholder="">
+    </div>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" name="email" value="johndoe@example.com" placeholder="">
+    </div>
+    <p>By submitting this information, you indicate that you agree to EasyLineUp's <strong>Terms of Service</strong> and have read and understood our <strong>Privacy Policy</strong>.</p>
+    <div class="input-group">
+      <button type="submit" class="btn" name="register_btn">Register</button>
+    </div>
+    <p>
+      Already a Member? <a href="index.html">Sign In</a>
+    </p>
+  </form>
+
+	<footer>
+		<p>Easy LineUp &copy; 2018, All Rights Reserved</p>
+	</footer>
+</body>
+
+</html>
