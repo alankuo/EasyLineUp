@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Chat Room </title>
+
+		<style>
+			*{
+				margin:0;
+				padding: 0;
+			}
+			body{
+				
+			}
+			img,span,li{
+				display: block;
+			}
+			p{
+				display: inline-block;
+			}
+
+			.right{
+				float: right;
+			}
+			.left{
+				float: left;
+			}
+			.container{
+					height: auto;
+					width: 600px;
+					margin:0 auto;
+					border-radius: 15px;
+			}
+			.navi{
+				height: 100px;
+				padding-top: 20px;
+
+			}
+			.navi h1{
+				width: 100%;
+				text-align: center;
+
+			}
+			.window{
+				border: 1px solid;
+			}
+
+			.user_queue{
+				height: 500px;
+				width: 100%;
+				border-top:1px solid;
+				border-bottom:1px solid;
+				overflow: scroll;
+				background-color: #f0f0f0;
+			}
+			.user_queue li{
+				width: 100%;
+				/*height: 100px;*/
+				margin: 10px auto;	
+				display: inline-block;		
+			}
+
+
+			.user_queue .box-right .icon,.user_queue .box-right .msg{
+				float: right;
+			}
+			.user_queue .box-left .icon,.user_queue .box-left .msg{
+				float: left;
+			}
+			.user_queue .box-right .msg p{
+				background-color: #92e749;
+			}
+			.user_queue .box-left .triangle{
+				position: absolute;
+			    width: 10px;
+			    height: 10px;
+			    background: white;
+			    transform: rotate(45deg);
+			    top: 35px;
+			    left: -5px;
+			}
+			.user_queue .box-right .triangle{
+				position: absolute;
+			    width: 10px;
+			    height: 10px;
+			    background: white;
+			    transform: rotate(45deg);
+			    top: 15px;
+			    left: 345px;
+
+			    background-color: #92e749;
+			}
+
+
+			/*icon*/
+			.user_queue li .icon{				
+				width: 30px;
+				height: 100%;
+				margin: 0 10px;
+			}
+			.user_queue li .icon img{
+				width: 30px;
+				height: 30px;
+				border: 1px solid;
+				margin: auto;
+
+			}
+
+			/*message*/
+			.user_queue li .msg{
+				width: 350px;
+				height: 100%;
+				position: relative;
+
+
+			}
+
+			.user_queue li .msg span{
+				color: #a5a5a5;
+				font-size: 13px;
+				font-weight: normal;
+				font-family: Aria;
+			}
+
+			.user_queue li .msg p{
+				width: auto;
+				border-radius: 6px;
+				padding: 15px 10px 10px 10px ;
+				background-color: white;
+				font-size:  15px;
+				font-family: Aira;
+			} 
+			
+
+
+
+
+
+
+
+
+
+			/* input box */
+
+			.input{
+				height: 120px;	
+				padding: 10px;
+			}
+			.input textarea{
+				height: 70%;
+				overflow: scroll;
+				width: 300px;
+				border: 0;
+				resize: none;
+			}
+			.input textarea:focus{
+				outline: none !important;
+				border: none;
+
+			}
+			.input button{
+				width: 40px;
+				height: 40px;
+				border-radius: 25px;
+				border: 2px solid red;
+				background-color: white;
+				float: right;
+				margin-top:60px;
+
+			}
+			.input button:focus{
+				float: top;
+			}
+
+		</style>
+		<!-- <script src="/socket.io/socket.io.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<script>
+  			$(function(){
+  				var socket = io();
+  				$(".input textarea").keypress(function(e){
+  					if(e.which == 13){
+  						$(".input button").click();
+  					}
+  				})
+	  			$(".input button").click(function(){
+	  					var msg = $('.input textarea').val()
+	  					socket.emit('msg', msg);
+	  					$('.user_queue').append("<li><p class='right'>"+msg+"</p></li>")
+	  					$('.user_queue').scrollTop($('.user_queue').prop("scrollHeight"))
+	  					$('.input textarea').val("")
+	  			})
+	  			socket.on('get_msg',function(msg,id){
+	  					if(socket.id != id){
+	  						$('.user_queue').append("<li><p>"+msg+"</p></li>")
+	  					}
+	  					
+	  					$('.user_queue').scrollTop($('.user_queue').prop("scrollHeight"))
+	  					
+	  					console.log(socket.id)
+	  			})
+	  		})
+		</script> -->
+	</head>
+	
+	<body>
+
+		<div class="container window">
+			<div class="navi">
+				<h1>Chat Room 3</h1>
+			</div>
+			<ul class="user_queue">
+				<li class="box-left">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						<div class="triangle"></div>
+						<span>子雄 </span>
+						<p>Hello, how are you
+						</p>
+					</div>
+				</li>
+				<li class="box-left">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						 <div class="triangle"></div>
+						<span>子雄 </span>
+						<p>Hello</p>
+					</div>
+				</li >
+				<li class="box-left">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						 <div class="triangle"></div>
+						<span>子雄 </span>
+						<p>Hello</p>
+					</div>
+				</li>
+				<li class="box-right">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						 <div class="triangle"></div>
+						<p class="right">Hello</p>
+					</div>
+				</li>
+				<li class="box-right">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						 <div class="triangle"></div>
+						<p class="right">Hello</p>
+					</div>
+				</li>
+				<li class="box-right">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						 <div class="triangle"></div>
+						<p class="right">Hello</p>
+					</div>
+				</li>
+				<li class="box-right">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						 <div class="triangle"></div>
+						<p class="right">Hello</p>
+					</div>
+				</li>
+				<li class="box-right">
+					<div class="icon">
+						<img src="icon.jpeg" alt="Flowers" />
+					</div>
+					<div class="msg">
+						 <div class="triangle"></div>
+						<p class="right">Hello<br>I am Robot</p>
+					</div>
+				</li>
+			</ul>
+			<div class="input">
+				<textarea></textarea>
+				<button>Send</button>
+			</div>
+		</div>
+		
+
+	</body>
+</html>
+			
