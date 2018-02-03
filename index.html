@@ -10,17 +10,36 @@
 </head>
 
 <body>
-	<div class="field-wrap">
-		<label> Email Address<span class="req">*</span>
-		</label>
-		<input type="email"required autocomplete="off"/>
+	<h1 class="welcome-msg" align="center">Welcome to <span class="primary">EasyLineUp!!</span></h1>
+	<div class="header">
+		<h2>Login</h2>
 	</div>
-	<div class="field-wrap">
-		<label>
-			Set A Password<span class="req">*</span>
-		</label>
-		<input type="password"required autocomplete="off"/>
-	</div>
+	<form method="post" action="../ctrl/action.php">
+		<div>
+			<label>Who Are You:</label>
+			<input type="radio" id="passenger"
+			name="identity" value="passenger" checked>
+			<label for="contactChoice1">Student</label>
+
+			<input type="radio" id="driver"
+			name="identity" value="driver">
+			<label for="contactChoice2">Driver</label>
+		</div>
+		<div class="input-group">
+			<label>Username</label>
+			<input type="text" name="username" >
+		</div>
+		<div class="input-group">
+			<label>Password</label>
+			<input type="password" name="password">
+		</div>
+		<div class="input-group">
+			<button type="submit" class="btn" name="login_btn">Login</button>
+		</div>
+		<p>
+			Not yet a member? <a href="register.html">Sign up</a>
+		</p>
+	</form>
 
 	<footer>
 		<p>Easy LineUp &copy; 2018, All Rights Reserved</p>
