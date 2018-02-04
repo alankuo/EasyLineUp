@@ -18,6 +18,21 @@
 				display: inline-block;
 			}
 
+			#back_btn{
+				font-size: 20px;
+				background-color: white;
+				border: none;
+				position: absolute;
+				top: 30px;
+				left: 20px;
+
+
+			}
+			#back_btn:hover{
+				color: #ef262b;
+				cursor: pointer;
+
+			}
 			.right{
 				float: right;
 			}
@@ -29,6 +44,7 @@
 					width: 600px;
 					margin:0 auto;
 					border-radius: 15px;
+					position: relative;
 			}
 			.navi{
 				height: 100px;
@@ -100,7 +116,6 @@
 			.user_queue li .icon img{
 				width: 30px;
 				height: 30px;
-				border: 1px solid;
 				margin: auto;
 
 			}
@@ -146,9 +161,9 @@
 				padding: 10px;
 			}
 			.input textarea{
-				height: 70%;
+				height: 100%;
 				overflow: scroll;
-				width: 300px;
+				width: 530px;
 				border: 0;
 				resize: none;
 			}
@@ -172,39 +187,12 @@
 			}
 
 		</style>
-		<!-- <script src="/socket.io/socket.io.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-		<script>
-  			$(function(){
-  				var socket = io();
-  				$(".input textarea").keypress(function(e){
-  					if(e.which == 13){
-  						$(".input button").click();
-  					}
-  				})
-	  			$(".input button").click(function(){
-	  					var msg = $('.input textarea').val()
-	  					socket.emit('msg', msg);
-	  					$('.user_queue').append("<li><p class='right'>"+msg+"</p></li>")
-	  					$('.user_queue').scrollTop($('.user_queue').prop("scrollHeight"))
-	  					$('.input textarea').val("")
-	  			})
-	  			socket.on('get_msg',function(msg,id){
-	  					if(socket.id != id){
-	  						$('.user_queue').append("<li><p>"+msg+"</p></li>")
-	  					}
-	  					
-	  					$('.user_queue').scrollTop($('.user_queue').prop("scrollHeight"))
-	  					
-	  					console.log(socket.id)
-	  			})
-	  		})
-		</script> -->
 	</head>
 	
 	<body>
 
 		<div class="container window">
+			<button id="back_btn">< Back</button>
 			<div class="navi">
 				<h1>Chat Room 3</h1>
 			</div>
@@ -215,18 +203,18 @@
 					</div>
 					<div class="msg">
 						<div class="triangle"></div>
-						<span>子雄 </span>
+						<span>Iron Man </span>
 						<p>Hello, how are you
 						</p>
 					</div>
 				</li>
 				<li class="box-left">
 					<div class="icon">
-						<img src="icon.jpeg" alt="Flowers" />
+						<img src="icon2.jpg" alt="Flowers" />
 					</div>
 					<div class="msg">
 						 <div class="triangle"></div>
-						<span>子雄 </span>
+						<span>Pikachu </span>
 						<p>Hello</p>
 					</div>
 				</li >
@@ -236,13 +224,13 @@
 					</div>
 					<div class="msg">
 						 <div class="triangle"></div>
-						<span>子雄 </span>
+						<span>Iron Man </span>
 						<p>Hello</p>
 					</div>
 				</li>
 				<li class="box-right">
 					<div class="icon">
-						<img src="icon.jpeg" alt="Flowers" />
+						<img src="icon3.jpg" alt="Flowers" />
 					</div>
 					<div class="msg">
 						 <div class="triangle"></div>
@@ -251,7 +239,7 @@
 				</li>
 				<li class="box-right">
 					<div class="icon">
-						<img src="icon.jpeg" alt="Flowers" />
+						<img src="icon3.jpg" alt="Flowers" />
 					</div>
 					<div class="msg">
 						 <div class="triangle"></div>
@@ -260,7 +248,7 @@
 				</li>
 				<li class="box-right">
 					<div class="icon">
-						<img src="icon.jpeg" alt="Flowers" />
+						<img src="icon3.jpg" alt="Flowers" />
 					</div>
 					<div class="msg">
 						 <div class="triangle"></div>
@@ -269,7 +257,7 @@
 				</li>
 				<li class="box-right">
 					<div class="icon">
-						<img src="icon.jpeg" alt="Flowers" />
+						<img src="icon3.jpg" alt="Flowers" />
 					</div>
 					<div class="msg">
 						 <div class="triangle"></div>
@@ -278,7 +266,7 @@
 				</li>
 				<li class="box-right">
 					<div class="icon">
-						<img src="icon.jpeg" alt="Flowers" />
+						<img src="icon3.jpg" alt="Flowers" />
 					</div>
 					<div class="msg">
 						 <div class="triangle"></div>
