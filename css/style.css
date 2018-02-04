@@ -16,6 +16,10 @@ body h1{
 	text-align: center;
 }
 
+.welcome-msg{
+	margin-top: 150px;
+}
+
 /* navigation bar */
 .ngbar{
 	margin:30px 50px 50px 50px;
@@ -163,10 +167,18 @@ ul.schedule {
 	text-align:center;
 }
 
-.info h2,.countdown h1{
+.countdown h1{
 	position: relative;
 	text-align: center;
+	font-size: 50px;
+	color:black;
+}
+
+.info h2{
+	position:relative;
+	text-align:center;
 }
 .info strong {
 	color: red;
+	font-size: 30px;
 }
