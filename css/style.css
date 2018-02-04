@@ -30,12 +30,11 @@ body h1{
 .ngbar-items {
 	margin:0;
 	padding:0 16px 16px 0;
-	height:67px;
+	height:auto;
 }
 
 .ngbar-items ul {
 	list-style:none;
-	height:67px;
 	border-left:1px solid #fff;
 	float: right;
 }
@@ -213,7 +212,6 @@ ul.schedule {
 }
 
 
-
 /* each person */
 .driver .checklist ul li{
 	height: 70px;
@@ -262,14 +260,11 @@ ul.schedule {
 
 }
 
-
 .msg{
 	width: 100%;
 	margin-top:20px;
-
-
-
 }
+
 .msg .wrap{
 	width: 100px;
 	height: 100px;
@@ -277,11 +272,13 @@ ul.schedule {
 	position: relative;
 	cursor: pointer;
 }
+
 .msg img{
 	width: 100%;
 	height: 100%;
 
 }
+
 .msg h1{
 	border-radius: 20px;
 	background-color: #e91e23;
@@ -433,15 +430,6 @@ p{
 	font-family: Aira;
 }
 
-
-
-
-
-
-
-
-
-
 /* input box */
 
 .input{
@@ -472,4 +460,72 @@ p{
 }
 .input button:focus{
 	float: top;
+}
+
+/* Media Query  */
+@media only screen and (max-width:375px){
+	.ngbar .ngbar-items p, .ngbar .ngbar-items p li{
+		width:100%;
+	}
+
+	.address{
+		width:100px;
+	}
+	h1{
+		font-size: 24px;
+	}
+
+	.address span{
+		font-size: 16px;
+	}
+
+	.header{
+		margin-top:200px;
+	}
+
+	.container, .window{
+		width:100px;
+	}
+}
+
+@media only screen and (min-width:375px) and (max-width:660px){
+	/* iPhone 7 */
+	/* .ngbar .ngbar-items p, .ngbar .ngbar-items p li{
+		width:100%;
+	} */
+	.ngbar {
+    margin:30px auto;
+    width:100%;
+  }
+  .ngbar-items{
+          padding-right: 0;
+  }
+  .ngbar-items ul{
+          width:100%;
+  }
+  .ngbar-items p{
+          text-align:center;
+          width:100%;
+  }
+  .ngbar-items ul li{
+          margin: 0;
+          width:100%;
+  }
+  .ngbar-items ul li a{
+          width:100%;
+  }
+  .header{
+          margin: 400px auto 0px;
+  }
+	.chatroom{
+		float:none;
+	}
+}
+
+@media only screen and (min-width:660px) and (max-width:768px){
+	/* Navbar breakpoint */
+}
+
+@media only screen and (min-width:768px){
+	/* Tablet */
 }

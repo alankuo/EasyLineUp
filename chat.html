@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title> Chat Room </title>
+		<title> Easy LineUp </title>
 
 		<style>
 			*{
@@ -51,6 +51,7 @@
 					border-radius: 15px;
 					position: relative;
 			}
+
 			.navi{
 				height: 100px;
 				padding-top: 20px;
@@ -151,14 +152,6 @@
 			}
 
 
-
-
-
-
-
-
-
-
 			/* input box */
 
 			.input{
@@ -189,6 +182,40 @@
 			}
 			.input button:focus{
 				float: top;
+			}
+
+			@media only screen and (max-width:680px){
+				.navi{
+					height:60px;
+				}
+
+				.navi h1{
+					font-size: 26px;
+				}
+
+				.container{
+					width:330px;
+				}
+
+				#back_btn{
+					font-size: 16px;
+				}
+
+				.user_queue li .msg{
+					width:180px;
+				}
+
+				.user_queue .box-right .triangle{
+					left:175px;
+				}
+
+				.user_queue{
+					height:400px;
+				}
+
+				.input textarea{
+					width:240px;
+				}
 			}
 
 		</style>
