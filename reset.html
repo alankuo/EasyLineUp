@@ -9,16 +9,18 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+  <h1 class="welcome-msg" align="center">Welcome to <span class="primary">EasyLineUp!!</span></h1>
   <div class="header">
     <h2>Reset Your Password</h2>
   </div>
-  <form method="post" action="../ctrl/action.php">
+  <form method="post" action="../ctrl/action.php" style="height:130px">
     <div class="input-group">
       <label>Your Email</label>
       <input type="email" name="email" value="" placeholder="name@example.com">
     </div>
     <div class="input-group">
-      <button type="submit" class="btn" name="register_btn">Forget Password</button>
+      <a href="login.html" class="btn" style="float:left">Back</a>
+      <button type="submit" class="btn" name="password_btn" style="float:right">Forget Password</button>
     </div>
   </form>
 </body>
