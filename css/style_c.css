@@ -1,0 +1,92 @@
+body{margin:0; padding-bottom: 40px;color: #5a5a5a;}
+
+.info h2,.countdown h1{
+	position: relative;
+	text-align: center;
+}
+.info strong {
+	color: red;
+}
+.header{
+	margin:50px; 
+	width:auto;
+	height:auto;
+}
+
+.header h1 {
+	position: relative;
+	text-align: center;
+	color:#e4e5e5; 
+	font:bold 36px/1.2em Arial, Helvetica, sans-serif; 
+	letter-spacing:10px;
+}
+
+.address,.select{
+	margin:50px; 
+	width:auto;
+	height:auto;            
+	line-height:100px;             
+	text-align:center;  
+}
+
+.address button,.select button {
+	margin: 25px;
+	padding: 25px;           
+	background: #66ffff;
+
+}
+
+.address span,.select span {
+	text-align: center;
+	color:#000000; 
+	font:bold 24px Arial, Helvetica, sans-serif; 
+}
+
+.time ul.none button {
+	margin: 5px;
+	padding-left: 100px;       
+	padding-right:100px;     
+	background: #66ffff;
+	font:bold 24px Arial, Helvetica, sans-serif;
+}
+
+ul.none {
+	text-indent: -2em;
+	list-style-type: none;
+	margin:50px; 
+	width:auto;
+	height:auto;            
+	line-height:10px;             
+	text-align:center;
+}
+
+.menu_nav { 
+	margin:0; 
+	padding:0 16px 16px 0; 
+	height:67px;
+}
+
+.menu_nav ul { 
+	list-style:none; 
+	height:67px; 
+	border-left:1px solid #fff;
+}
+.menu_nav ul li { 
+	margin:00; 
+	padding:0; 
+	float:left; 
+	border-right:1px solid #fff;
+}
+.menu_nav ul li a { 
+	display:block; 
+	margin:0; 
+	padding:14px 0 31px; width:107px; 
+	color:#888; 
+	font-size:13px; 
+	text-align:center;
+}
+
+.menu_nav ul li.active a, .menu_nav ul li a:hover { 
+	color:#fff; 
+	background:#f00;
+}

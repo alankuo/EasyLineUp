@@ -162,3 +162,11 @@ ul.schedule {
 	line-height:10px;
 	text-align:center;
 }
+
+.info h2,.countdown h1{
+	position: relative;
+	text-align: center;
+}
+.info strong {
+	color: red;
+}
