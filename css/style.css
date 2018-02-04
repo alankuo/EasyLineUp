@@ -120,11 +120,14 @@ footer p{
 
 /* index css */
 .address{
-	margin:50px;
-	width:auto;
+	width: 350px;
+  margin: 0px auto;
 	height:auto;
-	line-height:100px;
-	text-align:center;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+	text-align: center;
 }
 
 .address button {
@@ -133,24 +136,27 @@ footer p{
 	background: #7EBCE6;
 }
 
+.address .btn{
+	margin: 10px 20px;
+	padding: 10px 20px;
+}
+
 .address span {
 	text-align: center;
 	color:#000000;
 	font:bold 24px Arial, Helvetica, sans-serif;
 }
 
-.time ul.none button {
+.time ul.schedule button {
 	margin: 5px;
-	padding-left: 100px;
-	padding-right:100px;
+	padding:10px 100px;
 	background: #66ffff;
 	font:bold 24px Arial, Helvetica, sans-serif;
 }
 
-ul.none {
-	text-indent: -2em;
+ul.schedule {
 	list-style-type: none;
-	margin:50px;
+	margin:40px;
 	width:auto;
 	height:auto;
 	line-height:10px;
