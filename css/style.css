@@ -78,7 +78,6 @@ body h1{
 }
 
 .header {
-	width: 350px;
 	margin: 50px auto 0px;
 	color: white;
 	background: #5F9EA0;
@@ -141,6 +140,10 @@ form, .content {
 footer{
 	text-align: center;
 	margin-top: 50px;
+	text-align:center;
+	height:60px;
+	background:#f4f4f4;
+	padding-top:20px;
 }
 
 /* index css */
@@ -205,9 +208,9 @@ ul.schedule {
 }
 
 .chatroom {
-	margin-left: 50px;
-	margin-left: 50px;
-	float: left;
+	margin-left: 130px;
+	width:350px;
+	float:left;
 }
 
 
@@ -225,8 +228,9 @@ ul.schedule {
 	height: 100px;
 	line-height: 100px;
 	padding: 0;
-
 }
+
+
 .driver .checklist ul{
 	border: 1px solid;
 	width: 100%;
