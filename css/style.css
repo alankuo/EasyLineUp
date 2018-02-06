@@ -131,7 +131,7 @@ form, .content {
 .btn {
   padding: 10px;
   font-size: 15px;
-  color: white
+  color: white;
   background: #5F9EA0;
   border-radius: 10px;
 	margin-left: 120px;
@@ -160,7 +160,7 @@ footer{
 
 .address button {
 	margin: 25px;
-	padding: 25px;
+	padding: 15px;
 	background: #7EBCE6;
 }
 
