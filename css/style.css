@@ -79,18 +79,7 @@ body h1{
 }
 
 .header {
-	margin: 50px auto 0px;
-	color: white;
-	background: #5F9EA0;
-	text-align: center;
-	border: 1px solid #5F9EA0;
-	border-bottom: none;
-	border-radius: 10px 10px 0px 0px;
-	padding: 20px;
-}
-
-.header2 {
-	margin: 50px auto 0px;
+	margin: 70px auto 0px;
 	color: white;
 	background: #5F9EA0;
 	text-align: center;
@@ -175,7 +164,12 @@ footer{
 	font:bold 24px Arial, Helvetica, sans-serif;
 }
 
-.time ul.schedule button {
+.time{
+	width:350px;
+	margin: 0 400px;
+}
+
+.address ul.schedule button {
 	margin: 5px;
 	width:228px;
 	background: #66ffff;
@@ -350,14 +344,6 @@ p{
 	float: left;
 }
 
-/* .container{
-		height: auto;
-		width: 600px;
-		margin:0 auto;
-		border-radius: 15px;
-		position: relative;
-} */
-
 .navi{
 	height: 100px;
 	padding-top: 20px;
@@ -386,7 +372,6 @@ p{
 	margin: 10px auto;
 	display: inline-block;
 }
-
 
 .user_queue .box-right .icon,.user_queue .box-right .msg{
 	float: right;
@@ -417,7 +402,6 @@ p{
 
     background-color: #92e749;
 }
-
 
 /*icon*/
 .user_queue li .icon{
@@ -496,7 +480,7 @@ p{
 		width:100%;
 	}
 
-	.chatroom{
+	.time, .chatroom{
 		width:300px;
 		margin-left: 20px;
 	}
@@ -515,7 +499,7 @@ p{
 }
 
 @media only screen and (min-width:376px) and (max-width:550px){
-	.chatroom{
+	.time, .chatroom{
 		margin-left: 50px;
 		width: 280px;
 	}
@@ -525,6 +509,11 @@ p{
 }
 
 @media only screen and (min-width:550px) and (max-width:730px){
+	.time{
+		margin-left: 150px;
+		width: 350px;
+	}
+
 	.chatroom h1{
 		font-size: 26px;
 	}
@@ -589,6 +578,11 @@ p{
 }
 
 @media only screen and (min-width:730px) and (max-width: 1200px){
+	.time{
+		margin-left: 200px;
+		width: 350px;
+	}
+
 	.chatroom{
 		width:300px;
 		margin-left: 50px;
