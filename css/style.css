@@ -5,11 +5,12 @@
 	padding:0;
 }
 
-body{
-	font-size: 16px;
-	margin:0;
-	padding-bottom: 40px;
-	color: #5a5a5a;
+body {
+  padding-top: 90px;
+}
+
+section{
+	padding:30px 0;
 }
 
 body h1{
@@ -20,51 +21,60 @@ body h1{
 	margin-top: 150px;
 }
 
-/* navigation bar */
-.ngbar{
-	margin:30px 50px 50px 50px;
-	width:auto;
-	height:auto;
+/* .container{
+	margin-right:10px;
+} */
+
+/* Navigation Bar */
+.nav{
+	margin-top: 18px;
 }
 
-.ngbar-items {
+.navbar{
+	min-height: 70px;
+	margin-bottom: 0;
+}
+
+.navbar-brand{
+	height:auto;
+	padding-top: 15px;
 	margin:0;
-	padding:0 16px 16px 0;
-	height:auto;
 }
 
-.ngbar-items ul {
-	list-style:none;
-	border-left:1px solid #fff;
-	float: right;
-}
-.ngbar-items ul li {
+.navbar-nav{
 	margin:0;
 	padding:0;
-	float:left;
-	border-right:1px solid #fff;
-}
-.ngbar-items ul li a {
-	display:block;
-	margin:0;
-	padding:14px 0 31px; width:107px;
-	color:#888;
-	font-size:13px;
-	text-align:center;
 }
 
-.ngbar-items ul li.active a, .ngbar-items ul li a:hover {
-	color:#fff;
-	background:#5F9EA0;
+.navbar-nav li{
+	padding-top: 15px;
+	padding-bottom: 5px;
 }
 
-.ngbar-items p{
-	float:left;
-	display:block;
-	margin:0;
-	padding:14px 0 31px; width:107px;
-	color:#888;
+.navbar-nav li a{
+	padding: 20px;
+	font-size: 18px;
 	font-weight: bold;
+	border-right: 1px solid #CCC;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
+
+.navbar-nav li a span{
+	margin: 5px 0 0 0;
+	padding: 0;
+	font-size: 14px;
+	display: block;
+	font-weight: normal;
+	font-family: arial;
+	text-transform: none;
+}
+
+/* Overwrite hover and link of Navbar tabs */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus, .navbar-nav a:hover{
+	background: #0383C0 !important;
+	color:#FFF !important;
 }
 
 .header {
@@ -336,13 +346,15 @@ p{
 .left{
 	float: left;
 }
-.container{
+
+/* .container{
 		height: auto;
 		width: 600px;
 		margin:0 auto;
 		border-radius: 15px;
 		position: relative;
-}
+} */
+
 .navi{
 	height: 100px;
 	padding-top: 20px;
@@ -495,37 +507,13 @@ p{
 		margin-top:200px;
 	}
 
-	.container, .window{
+	.window{
 		width:100px;
 	}
 }
 
 @media only screen and (max-width:660px){
 	/* iPhone 7 */
-	/* .ngbar .ngbar-items p, .ngbar .ngbar-items p li{
-		width:100%;
-	} */
-	.ngbar {
-    margin:30px auto;
-    width:100%;
-  }
-  .ngbar-items{
-          padding-right: 0;
-  }
-  .ngbar-items ul{
-          width:100%;
-  }
-  .ngbar-items p{
-          text-align:center;
-          width:100%;
-  }
-  .ngbar-items ul li{
-          margin: 0;
-          width:100%;
-  }
-  .ngbar-items ul li a{
-          width:100%;
-  }
   .header{
           margin: 400px auto 0px;
   }
@@ -548,4 +536,54 @@ p{
 
 @media only screen and (min-width:768px){
 	/* Tablet */
+}
+
+@media(max-width: 995px){
+	.navbar-header{
+		float:none !important;
+	}
+
+	.navbar-left, .navbar-right{
+		float:none !important;
+	}
+
+	/* the button to show the menu */
+	.navbar-toggle{
+		display:block;
+	}
+
+	.navbar-collapse{
+		border-top: 1px solid transparent;
+		box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+	}
+
+	.navbar-fixed-top{
+		top:0;
+		border-width: 0 0 1px;
+	}
+
+	/* hide to collapse for small window */
+	.navbar-collapse.collapse{
+		display:none !important;
+	}
+
+	.navbar-nav{
+		float:none;
+		margin-top: 7.5px;
+	}
+
+	/* > indicates immediate */
+	.navbar-nav > li{
+		float:none;
+	}
+
+	.navbar-nav > li > a{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-right: none;
+	}
+
+	.collapse.in{
+		display:block;
+	}
 }
