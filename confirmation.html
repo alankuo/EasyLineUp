@@ -3,37 +3,52 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>confirmation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>confirmation</title>
 
-		<!-- Bootstrap core CSS -->
-		<link href="css/bootstrap.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
 
-		<!-- CSS -->
-		<link href="css/style.css" rel="stylesheet">
+	<!-- CSS -->
+	<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="ngbar">
-    <div class="ngbar-items">
-      <p class="title">Easy LineUp</p>
-      <ul>
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="chatroom.html">Chatting Room</a></li>
-				<li><a href="login.html">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="header">
-  	<h1>You Selected:</h1>
-  </div>
-  <div class="address">
-    <div class = "select" style="padding:60px 0 80px 0">
-  	 <span style="font-size:55px; color:red">7:45am</span>
-    </div>
-    <a href="timeslot.html" class="btn">Back</a>
-  	<a href="status.html" class="btn">Line-Up</a>
-  </div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo-nav" href="#"><img src="img/logo.png"></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<!-- bootstrap calss "navbar-right" will float to the right -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="chatroom.html">Chatting Room</a></li>
+					<li><a href="login.html">Logout</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div class="container">
+		<div class="time">
+			<div class="header">
+				<h1>You Selected:</h1>
+			</div>
+			<div class="address">
+				<div class = "select" style="padding:40px 0 50px 0">
+					<span style="font-size:55px; color:red">7:45am</span>
+				</div>
+				<a href="timeslot.html" class="btn">Back</a>
+				<a href="status.html" class="btn">Line-Up</a>
+			</div>
+		</div>
+	</div>
 
 	<footer>
 		<p>Easy LineUp &copy; 2018, All Rights Reserved</p>
