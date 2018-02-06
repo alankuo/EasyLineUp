@@ -177,7 +177,7 @@ footer{
 
 .time ul.schedule button {
 	margin: 5px;
-	padding:10px 100px;
+	width:228px;
 	background: #66ffff;
 	font:bold 24px Arial, Helvetica, sans-serif;
 }
