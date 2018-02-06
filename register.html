@@ -9,55 +9,57 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="header">
-    <h2>Register An Account</h2>
+  <div class="container">
+    <div class="header" style="width:350px">
+      <h2>Register An Account</h2>
+    </div>
+    <form method="post" action="../ctrl/action.php">
+      <div class="input-group">
+        <label>Access Code</label>
+        <input type="text" name="accesscode" value="" placeholder="X000000">
+      </div>
+      <div class="input-group">
+        <label>First Name</label>
+        <input type="text" name="username" value="" placeholder="">
+      </div>
+      <div class="input-group">
+        <label>Last Name</label>
+        <input type="text" name="username" value="" placeholder="">
+      </div>
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" value="" placeholder="">
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password_1" placeholder="xxxxxxxx">
+      </div>
+      <div class="input-group">
+        <label>Confirm Password</label>
+        <input type="password" name="password_2" placeholder="xxxxxxxx">
+      </div>
+      <div class="input-group">
+        <label>Phone</label>
+        <input type="number" name="phone" value="" placeholder="(000)-000-0000">
+      </div>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" name="email" value="" placeholder="name@example.com">
+      </div>
+      <p>By submitting this information, you indicate that you agree to EasyLineUp's <strong>Terms of Service</strong> and have read and understood our <strong>Privacy Policy</strong>.</p>
+      <div class="input-group">
+        <button type="submit" class="btn" name="register_btn" style="margin-left:0">Register</button>
+      </div>
+      <p>
+        Already a Member? <a href="login.html">Sign In</a>
+      </p>
+    </form>
   </div>
-  <form method="post" action="../ctrl/action.php">
-    <div class="input-group">
-      <label>Access Code</label>
-      <input type="text" name="accesscode" value="" placeholder="X000000">
-    </div>
-    <div class="input-group">
-      <label>First Name</label>
-      <input type="text" name="username" value="" placeholder="">
-    </div>
-    <div class="input-group">
-      <label>Last Name</label>
-      <input type="text" name="username" value="" placeholder="">
-    </div>
-    <div class="input-group">
-      <label>Username</label>
-      <input type="text" name="username" value="" placeholder="">
-    </div>
-    <div class="input-group">
-      <label>Password</label>
-      <input type="password" name="password_1" placeholder="xxxxxxxx">
-    </div>
-    <div class="input-group">
-      <label>Confirm Password</label>
-      <input type="password" name="password_2" placeholder="xxxxxxxx">
-    </div>
-    <div class="input-group">
-      <label>Phone</label>
-      <input type="number" name="phone" value="" placeholder="(000)-000-0000">
-    </div>
-    <div class="input-group">
-      <label>Email</label>
-      <input type="email" name="email" value="" placeholder="name@example.com">
-    </div>
-    <p>By submitting this information, you indicate that you agree to EasyLineUp's <strong>Terms of Service</strong> and have read and understood our <strong>Privacy Policy</strong>.</p>
-    <div class="input-group">
-      <button type="submit" class="btn" name="register_btn">Register</button>
-    </div>
-    <p>
-      Already a Member? <a href="login.html">Sign In</a>
-    </p>
-  </form>
 
 
-<footer>
-  <p>Easy LineUp &copy; 2018, All Rights Reserved</p>
-</footer>
+  <footer>
+    <p>Easy LineUp &copy; 2018, All Rights Reserved</p>
+  </footer>
 </body>
 
 </html>

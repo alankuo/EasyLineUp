@@ -5,44 +5,51 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Easy LineUp</title>
 
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
 	<!-- CSS -->
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 	<h1 class="welcome-msg">Welcome to <span class="primary">EasyLineUp!!</span></h1>
-	<div class="header">
-		<h2>LOG IN</h2>
-	</div>
-	<form method="post" action="../ctrl/action.php">
-		<div>
-			<label>Who Are You:</label>
-			<input type="radio" id="passenger"
-			name="identity" value="passenger" checked>
-			<label>Student</label>
+	<div class="container">
+		<div class="time">
+			<div class="header">
+				<h2>LOG IN</h2>
+			</div>
+			<form method="post" action="../ctrl/action.php">
+				<div>
+					<label>Who Are You:</label>
+					<input type="radio" id="passenger"
+					name="identity" value="passenger" checked>
+					<label>Student</label>
 
-			<input type="radio" id="driver"
-			name="identity" value="driver">
-			<label>Driver</label>
+					<input type="radio" id="driver"
+					name="identity" value="driver">
+					<label>Driver</label>
+				</div>
+				<div class="input-group">
+					<label>Username</label>
+					<input type="text" name="username" >
+				</div>
+				<div class="input-group">
+					<label>Password</label>
+					<input type="password" name="password">
+				</div>
+				<div class="input-group">
+					<button type="submit" class="btn" name="login_btn">LOG IN</button>
+				</div>
+				<p>
+					Not yet a member? <a href="register.html">Sign up</a>
+				</p>
+				<p>
+					Forgot your password? <a href="reset.html">Reset Password</a>
+				</p>
+			</form>
 		</div>
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" >
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password">
-		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="login_btn">LOG IN</button>
-		</div>
-		<p>
-			Not yet a member? <a href="register.html">Sign up</a>
-		</p>
-		<p>
-			Forgot your password? <a href="reset.html">Reset Password</a>
-		</p>
-	</form>
+	</div>
 
 	<footer>
 		<p>Easy LineUp &copy; 2018, All Rights Reserved</p>
