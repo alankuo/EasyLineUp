@@ -131,10 +131,10 @@ form, .content {
 .btn {
   padding: 10px;
   font-size: 15px;
-  color: white;
+  color: white
   background: #5F9EA0;
-  border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+	margin-left: 120px;
 }
 
 footer{
