@@ -15,6 +15,7 @@ section{
 
 body h1{
 	text-align: center;
+	font-size: 30px;
 }
 
 .welcome-msg{
@@ -89,7 +90,6 @@ body h1{
 }
 
 .header2 {
-	width: 350px;
 	margin: 50px auto 0px;
 	color: white;
 	background: #5F9EA0;
@@ -148,7 +148,7 @@ footer{
 
 /* index css */
 .address{
-	width: 350px;
+	width: auto;
   margin: 0px auto;
 	height:auto;
   padding: 20px;
@@ -184,7 +184,6 @@ footer{
 
 ul.schedule {
 	list-style-type: none;
-	margin:40px;
 	width:auto;
 	height:auto;
 	line-height:10px;
@@ -491,14 +490,17 @@ p{
 }
 
 /* Media Query  */
-@media only screen and (max-width:375px){
+@media only screen and (max-width:376px){
+	/* iPhone 7 */
 	.ngbar .ngbar-items p, .ngbar .ngbar-items p li{
 		width:100%;
 	}
 
-	.address{
-		width:100px;
+	.chatroom{
+		width:300px;
+		margin-left: 20px;
 	}
+
 	h1{
 		font-size: 24px;
 	}
@@ -507,22 +509,24 @@ p{
 		font-size: 16px;
 	}
 
-	.header{
-		margin-top:200px;
-	}
-
 	.window{
 		width:100px;
 	}
 }
 
-@media only screen and (max-width:660px){
-	/* iPhone 7 */
-  .header{
-          margin: 400px auto 0px;
-  }
+@media only screen and (min-width:376px) and (max-width:550px){
 	.chatroom{
-		float:none;
+		margin-left: 50px;
+		width: 280px;
+	}
+	.chatroom h1{
+		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width:550px) and (max-width:730px){
+	.chatroom h1{
+		font-size: 26px;
 	}
 
 	.driver .checklist{
@@ -532,14 +536,6 @@ p{
 	.driver .checklist ul li h4{
 		width:100px;
 	}
-}
-
-@media only screen and (min-width:660px) and (max-width:768px){
-	/* Navbar breakpoint */
-}
-
-@media only screen and (min-width:768px){
-	/* Tablet */
 }
 
 @media(max-width: 995px){
@@ -589,5 +585,15 @@ p{
 
 	.collapse.in{
 		display:block;
+	}
+}
+
+@media only screen and (min-width:730px) and (max-width: 1200px){
+	.chatroom{
+		width:300px;
+		margin-left: 50px;
+	}
+	.chatroom h1{
+		font-size: 24px;
 	}
 }
