@@ -243,6 +243,7 @@ ul.schedule {
 	width: 50px;
 	height: 100%;
 	text-align: center;
+	margin: 0;
 	line-height: 70px;
 	font-family: Arial;
 	font-weight: normal;
@@ -251,6 +252,7 @@ ul.schedule {
 .driver .checklist ul li h4{
 	width: 300px;
 	height: 100%;
+	margin: 0;
 	line-height: 70px;
 	font-family: Arial;
 	font-weight: normal;
@@ -266,6 +268,7 @@ ul.schedule {
 	font-weight: normal;
 	float: right;
 	cursor: pointer;
+	padding:0 20px 0 0;
 }
 .driver .checklist ul li .icon
 {
@@ -495,8 +498,16 @@ p{
 	}
 
 	.window{
-		width:100px;
+		width:60px;
 	}
+	.driver .checklist{
+		width:300px;
+	}
+
+	.driver .checklist ul li h4{
+		width:140px;
+	}
+
 }
 
 @media only screen and (min-width:376px) and (max-width:550px){
@@ -507,6 +518,15 @@ p{
 	.chatroom h1{
 		font-size: 20px;
 	}
+
+	.driver .checklist{
+		width:350px;
+	}
+
+	.driver .checklist ul li h4{
+		width:140px;
+	}
+
 }
 
 @media only screen and (min-width:550px) and (max-width:730px){
@@ -524,7 +544,7 @@ p{
 	}
 
 	.driver .checklist ul li h4{
-		width:100px;
+		width:140px;
 	}
 }
 
