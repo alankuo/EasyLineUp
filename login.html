@@ -12,6 +12,19 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
+<script>
+function validateLogin(){
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	if ( username == "alan" && password == "kuo"){
+		alert ("Login successfully");
+		window.location = "index.html";
+	}
+	else{
+		alert("username and password do not match!");
+	}
+};
+</script>
 <body>
 	<h1 class="welcome-msg">Welcome to <span class="primary">EasyLineUp!!</span></h1>
 	<div class="container">
@@ -19,7 +32,7 @@
 			<div class="header">
 				<h2>LOG IN</h2>
 			</div>
-			<form method="post" action="../ctrl/action.php">
+			<form id="form_id" method="post" name="myform">
 				<div>
 					<label>Who Are You:</label>
 					<input type="radio" id="passenger"
@@ -32,14 +45,14 @@
 				</div>
 				<div class="input-group">
 					<label>Username</label>
-					<input type="text" name="username" >
+					<input type="text" name="username" id="username" >
 				</div>
 				<div class="input-group">
 					<label>Password</label>
-					<input type="password" name="password">
+					<input type="password" name="password" id="password" >
 				</div>
 				<div class="input-group">
-					<button type="submit" class="btn" name="login_btn">LOG IN</button>
+					<span type="submit" class="btn" onclick="validateLogin()" id="submitBtn" name="login_btn">LOG IN</span>
 				</div>
 				<p>
 					Not yet a member? <a href="register.html">Sign up</a>
@@ -55,5 +68,13 @@
 		<p>Easy LineUp &copy; 2018, All Rights Reserved</p>
 	</footer>
 </body>
+<script>
+var input = document.getElementById("password");
+input.addEventListener("keypress", function(event) {
+    if (event.which === 13) {
+			document.getElementById("submitBtn").click();
+    }
+});
+</script>
 
 </html>

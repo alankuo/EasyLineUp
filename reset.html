@@ -4,23 +4,37 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Easy LineUp</title>
+  <!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
 
   <!-- CSS -->
   <link href="css/style.css" rel="stylesheet">
 </head>
+
+<script>
+function sendEmail(){
+  var email = document.getElementById("email").value;
+  if(!email.includes("@")||!email.includes(".com")){
+    alert("Please enter a valid email address!");
+  }
+  else{
+    alert("A password reset link has been sent to " + email);
+  }
+}
+</script>
 <body>
   <h1 class="welcome-msg">Welcome to <span class="primary">EasyLineUp!!</span></h1>
   <div class="header" style="width:350px">
     <h2>Reset Your Password</h2>
   </div>
-  <form method="post" action="../ctrl/action.php" style="height:130px;">
+  <form method="post">
     <div class="input-group">
       <label>Your Email</label>
-      <input type="email" name="email" value="" placeholder="name@example.com">
+      <input type="email" name="email" id="email" placeholder="name@example.com">
     </div>
     <div class="input-group">
-      <a href="login.html" class="btn" style="float:left; margin-left:10px">Back</a>
-      <button type="submit" class="btn" name="password_btn" style="float:right">Forget Password</button>
+      <a href="login.html" class="btn" style="float:left; margin-left:5px">Back</a>
+      <span type="submit" class="btn" name="password_btn" onclick="sendEmail()" style="float:right; margin-left:100px">Forget Password</span>
     </div>
   </form>
 
