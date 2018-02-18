@@ -4,51 +4,78 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Easy LineUp</title>
+  <!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
 
   <!-- CSS -->
   <link href="css/style.css" rel="stylesheet">
 </head>
+<script>
+function registerAccount(){
+
+  var access_code = document.getElementById("access_code").value;
+  var first_name = document.getElementById("first_name").value;
+  var last_name = document.getElementById("last_name").value;
+  var username = document.getElementById("username").value;
+  var password_1 = document.getElementById("password_1").value;
+  var password_2 = document.getElementById("password_2").value;
+  if(access_code==""||first_name==""||last_name==""||username==""||password_1==""||password_2==""){
+    alert("Please fill in all required information!");
+  }
+  else if(password_1.length<8){
+    alert("Password is too short! It has to be at least 8 characters!");
+  }
+  else if(password_1!=password_2){
+    alert("Passwords do not match!");
+  }
+  else{
+    alert ("The account for " + username + " has been successfully created! You can log in to Easy LineUp Now!");
+    window.location = "login.html";
+  }
+}
+</script>
+
 <body>
   <div class="container">
     <div class="header" style="width:350px;margin-top:0">
       <h2>Register An Account</h2>
     </div>
-    <form method="post" action="../ctrl/action.php">
+    <form method="post">
       <div class="input-group">
-        <label>Access Code</label>
-        <input type="text" name="accesscode" value="" placeholder="X000000">
+        <label>Access Code*</label>
+        <input type="text" name="accesscode" id="access_code">
       </div>
       <div class="input-group">
-        <label>First Name</label>
-        <input type="text" name="username" value="" placeholder="">
+        <label>First Name*</label>
+        <input type="text" name="first_name" id="first_name" placeholder="">
       </div>
       <div class="input-group">
-        <label>Last Name</label>
-        <input type="text" name="username" value="" placeholder="">
+        <label>Last Name*</label>
+        <input type="text" name="last_name" id="last_name" placeholder="">
       </div>
       <div class="input-group">
-        <label>Username</label>
-        <input type="text" name="username" value="" placeholder="">
+        <label>Username*</label>
+        <input type="text" name="username" id="username" placeholder="">
       </div>
       <div class="input-group">
-        <label>Password</label>
-        <input type="password" name="password_1" placeholder="xxxxxxxx">
+        <label>Password*</label>
+        <input type="password" name="password_1" id="password_1" placeholder="xxxxxxxx">
       </div>
       <div class="input-group">
-        <label>Confirm Password</label>
-        <input type="password" name="password_2" placeholder="xxxxxxxx">
+        <label>Confirm Password*</label>
+        <input type="password" name="password_2" id="password_2" placeholder="xxxxxxxx">
       </div>
       <div class="input-group">
         <label>Phone</label>
-        <input type="number" name="phone" value="" placeholder="(000)-000-0000">
+        <input type="number" name="phone" placeholder="(000)-000-0000">
       </div>
       <div class="input-group">
-        <label>Email</label>
-        <input type="email" name="email" value="" placeholder="name@example.com">
+        <label>Email*</label>
+        <input type="email" name="email" placeholder="name@example.com">
       </div>
       <p>By submitting this information, you indicate that you agree to EasyLineUp's <strong>Terms of Service</strong> and have read and understood our <strong>Privacy Policy</strong>.</p>
       <div class="input-group">
-        <button type="submit" class="btn" name="register_btn" style="margin-left:0">Register</button>
+        <span type="submit" class="btn" name="register_btn" onclick="registerAccount()">Register</span>
       </div>
       <p>
         Already a Member? <a href="login.html">Sign In</a>
