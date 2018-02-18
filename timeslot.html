@@ -10,6 +10,38 @@
 
 		<!-- CSS -->
 		<link href="css/style.css" rel="stylesheet">
+
+	<script>
+		window.onload = function (){
+			document.querySelector(".header h1").innerHTML = localStorage["direction"];
+			var d = new Date();
+			var hour = d.getHours();
+			var currMin = d.getMinutes();
+			var min = 15;
+			var list = document.getElementsByClassName('schedule')[0];
+		    var items = list.childNodes;
+			for (var i = 0, length = items.length; i < length; i++)
+			{
+			    if (items[i].nodeType != 1) {
+			       continue;
+			    }
+			    if (min >= 60) {
+			    	hour = hour + 1;
+			    	min = 0;
+			    	items[i].innerHTML = '<li><button type="button" class="btn btn-primary" onclick="getSchedule(this)">'+hour+':00'+'</button></li>';
+			    } else {
+			    	items[i].innerHTML = '<li><button type="button" class="btn btn-primary" onclick="getSchedule(this)">'+ hour +":" +  min +'</button></li>';
+				}
+
+			    min += 15;
+			}
+		};	
+
+		function getSchedule(selected){ 
+			localStorage.setItem("schedule",selected.innerHTML); 
+			window.location.href='status.html';
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -47,13 +79,13 @@
 		  </div>
 		  <div class="address">
 		    <ul class="schedule">
-		      <li><button type = "button" disabled>7:00</button></li>
-		      <li><button type = "button" disabled>7:15</button></li>
-		      <li><button type = "button" disabled>7:30</button></li>
-		      <li><button onclick="window.location.href='confirmation.html'">7:45</button></li>
-		      <li><button>8:00</button></li>
-		      <li><button>8:15</button></li>
-		      <li><button>8:30</button></li>
+		      <li><button type="button" class="btn btn-info">7:00</button></li>
+		      <li><button type="button" class="btn btn-info">7:15</button></li>
+		      <li><button type="button" class="btn btn-info">7:30</button></li>
+		      <li><button type="button" class="btn btn-info">7:45</button></li>
+		      <li><button type="button" class="btn btn-info">8:00</button></li>
+		      <li><button type="button" class="btn btn-info">8:15</button></li>
+		      <li><button type="button" class="btn btn-info">8:30</button></li>
 		    </ul>
 				<a href="index.html" class="btn">Back</a>
 		  </div>

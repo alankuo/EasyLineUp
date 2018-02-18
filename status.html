@@ -17,7 +17,9 @@
     function Countdown() {
 		var currDate = new Date();
 		var now = currDate.getTime();
-		var endDate = new Date("2018/2/18 15:00");
+		var month = currDate.getMonth()+1;
+		var str = "2018/"+month+"/"+currDate.getDate()+ " "+localStorage["schedule"];
+		var endDate = new Date(str);
 		var end = endDate.getTime();
 		var diff = end - now;
 

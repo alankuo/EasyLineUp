@@ -10,6 +10,17 @@
 
 	<!-- Custom CSS -->
 	<link href="css/style.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		function GetDirection(sw) {
+			if (sw == 0) {
+				localStorage.setItem("direction","UCSD => VOR");
+			} else {
+				localStorage.setItem("direction","VOR => UCSD");
+			}
+			window.location.href='timeslot.html';
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -44,8 +55,8 @@
 
 	<h1 style="margin-top:130px">Choose Your Route</h1>
 	<div class="address" style="border:none">
-		<button onclick="window.location.href='timeslot.html'"><span>UCSD => VOR</span></button>
-		<button onclick="window.location.href='timeslot.html'"><span>VOR => UCSD</span></button>
+		<button onclick="GetDirection(0)"><span>UCSD => VOR</span></button>
+		<button onclick="GetDirection(1)"><span>VOR => UCSD</span></button>
 	</div>
 
 	<footer>
