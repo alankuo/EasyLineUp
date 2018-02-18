@@ -7,7 +7,7 @@
 	<title> Easy LineUp </title>
 
 		<style>
-			*{
+			*{s
 				margin:0;
 				padding: 0;
 			}
@@ -219,10 +219,56 @@
 			}
 
 		</style>
+
+		<script type="text/javascript">
+			window.onload = function(){
+				document.querySelector(".input textarea").onkeypress = function(e){
+	  					if(e.which == 13){
+	  						e.preventDefault();
+	  						document.querySelector(".input button").click();
+	  						document.querySelector('.input textarea').value = "";
+	  					}
+	  			}
+	  			console.log('a');
+	  			document.querySelector(".input button").onclick = function(e){
+	  					console.log('a');
+	  					var msg = ' <li class="box-right">\
+									<div class="icon">\
+										<img src="/img/icon3.jpg" alt="Flowers" />\
+									</div>\
+									<div class="msg">\
+						 				<div class="triangle"></div>\
+										<p class="right">'+document.querySelector('.input textarea').value+'</p>\
+									</div>\
+								</li>';
+	  					document.querySelector('.user_queue').innerHTML += msg;
+	  					document.querySelector('.user_queue').scrollTop += 100000000000;
+	  					document.querySelector('.input textarea').value = "";
+	  			}
+	  			// socket.on('get_msg',function(msg,id){
+	  			// 		if(socket.id != id){
+	  			// 			msg = ' <li class="box-left">\
+						// 				<div class="icon">\
+						// 					<img src="/img/icon3.jpg" alt="Flowers" />\
+						// 				</div>\
+						// 				<div class="msg">\
+						// 					<span>Iron Man </span>\
+						// 	 				<div class="triangle"></div>\
+						// 					<p class="left">'+msg+'</p>\
+						// 				</div>\
+						// 			</li>';
+	  			// 			$('.user_queue').append(msg);
+	  			// 		}
+	  					
+	  			// 		$('.user_queue').scrollTop($('.user_queue').prop("scrollHeight"))
+	  					
+	  			// 		console.log(socket.id)
+	  			// })
+	  		}
+		</script>
 	</head>
 
 	<body>
-
 		<div class="container window">
 			<a id = "back_btn" href="index.html">&lt;Back</a>
 			<div class="navi">
@@ -311,7 +357,9 @@
 				<button class="btn">Send</button>
 			</div>
 		</div>
+		
 
 
 	</body>
+
 </html>
