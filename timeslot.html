@@ -17,7 +17,16 @@
 			var d = new Date();
 			var hour = d.getHours();
 			var currMin = d.getMinutes();
-			var min = 15;
+			var min;
+			if (currMin >=0 && currMin<15) {
+				min = 15;
+			} else if (currMin >= 15 && currMin < 30) {
+				min = 30;
+			} else if (currMin >= 30 && currMin < 45) {
+				min = 45;
+			} else {
+				min = 0;
+			}
 			var list = document.getElementsByClassName('schedule')[0];
 		    var items = list.childNodes;
 			for (var i = 0, length = items.length; i < length; i++)
@@ -25,7 +34,7 @@
 			    if (items[i].nodeType != 1) {
 			       continue;
 			    }
-			    if (min >= 60) {
+			    if (min >= 60 || min == 0) {
 			    	hour = hour + 1;
 			    	min = 0;
 			    	items[i].innerHTML = '<li><button type="button" class="btn btn-primary" onclick="getSchedule(this)">'+hour+':00'+'</button></li>';
@@ -39,7 +48,7 @@
 
 		function getSchedule(selected){ 
 			localStorage.setItem("schedule",selected.innerHTML); 
-			window.location.href='status.html';
+			window.location.href='confirmation.html';
 		}
 	</script>
 </head>

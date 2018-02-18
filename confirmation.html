@@ -11,6 +11,12 @@
 
 	<!-- CSS -->
 	<link href="css/style.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		window.onload = function (){
+			document.querySelector(".select span").innerHTML=localStorage["schedule"];
+		}
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">

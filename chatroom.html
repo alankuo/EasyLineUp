@@ -11,7 +11,70 @@
 
   	<!-- CSS -->
   	<link href="css/style.css" rel="stylesheet">
+  <script>
+    window.onload = function (){
+      var d = new Date();
+      var hour = d.getHours();
+      var currMin = d.getMinutes();
+      var min;
+      if (currMin >=0 && currMin<15) {
+        min = 15;
+      } else if (currMin >= 15 && currMin < 30) {
+        min = 30;
+      } else if (currMin >= 30 && currMin < 45) {
+        min = 45;
+      } else {
+        min = 0;
+      }
+      var list = document.getElementsByClassName("schedule")[0];
+      var items = list.childNodes;
+      for (var i = 0, length = items.length; i < length; i++)
+      {
+          if (items[i].nodeType != 1) {
+             continue;
+          }
+          if (min >= 60 || min == 0) {
+            hour = hour + 1;
+            min = 0;
+            items[i].innerHTML = '<li><button type="button" class="btn btn-primary" onclick="window.location.href="chat.html"">'+hour+':00'+'</button></li>';
+          } else {
+            items[i].innerHTML = '<li><button type="button" class="btn btn-primary" onclick="window.location.href="chat.html}">'+ hour +":" +  min +'</button></li>';
+        }
 
+          min += 15;
+      }
+      var d = new Date();
+      var hour = d.getHours();
+      var currMin = d.getMinutes();
+      var min;
+      if (currMin >=0 && currMin<15) {
+        min = 15;
+      } else if (currMin >= 15 && currMin < 30) {
+        min = 30;
+      } else if (currMin >= 30 && currMin < 45) {
+        min = 45;
+      } else {
+        min = 0;
+      }
+      var list = document.getElementsByClassName("schedule")[1];
+      var items = list.childNodes;
+      for (var i = 0, length = items.length; i < length; i++)
+      {
+          if (items[i].nodeType != 1) {
+             continue;
+          }
+          if (min >= 60 || min == 0) {
+            hour = hour + 1;
+            min = 0;
+            items[i].innerHTML = '<li><button type="button" class="btn btn-primary" onclick="window.location.href="chat.html"">'+hour+':00'+'</button></li>';
+          } else {
+            items[i].innerHTML = '<li><button type="button" class="btn btn-primary" onclick="window.location.href="chat.html}">'+ hour +":" +  min +'</button></li>';
+        }
+
+          min += 15;
+      }
+    };
+    </script>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
