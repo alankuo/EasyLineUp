@@ -13,6 +13,12 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
+<script>
+function saveProfile(){
+	alert("Profile has been saved!");
+}
+</script>
+
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -46,7 +52,7 @@
 		<div class="header" style="width:350px">
 			<h2>Edit Your Profile</h2>
 		</div>
-		<form method="post" action="../ctrl/action.php">
+		<form method="post">
 	    <div class="input-group">
 	      <label>Username</label>
 	      <input type="text" name="username" value="johndoe">
@@ -61,7 +67,7 @@
 	    </div>
 	    <p>By submitting this information, you indicate that you agree to EasyLineUp's <strong>Terms of Service</strong> and have read and understood our <strong>Privacy Policy</strong>.</p>
 	    <div class="input-group">
-	      <button type="submit" class="btn" name="register_btn">Save</button>
+	      <span type="submit" onclick="saveProfile()" class="btn" name="register_btn">Save</span>
 	    </div>
 	  </form>
 	</div>
