@@ -547,56 +547,6 @@ p{
 	}
 }
 
-@media(max-width: 995px){
-	.navbar-header{
-		float:none !important;
-	}
-
-	.navbar-left, .navbar-right{
-		float:none !important;
-	}
-
-	/* the button to show the menu */
-	.navbar-toggle{
-		display:block;
-	}
-
-	.navbar-collapse{
-		border-top: 1px solid transparent;
-		box-shadow: 0 1px 0 rgba(255,255,255,0.1);
-	}
-
-	.navbar-fixed-top{
-		top:0;
-		border-width: 0 0 1px;
-	}
-
-	/* hide to collapse for small window */
-	.navbar-collapse.collapse{
-		display:none !important;
-	}
-
-	.navbar-nav{
-		float:none;
-		margin-top: 7.5px;
-	}
-
-	/* > indicates immediate */
-	.navbar-nav > li{
-		float:none;
-	}
-
-	.navbar-nav > li > a{
-		padding-top: 10px;
-		padding-bottom: 10px;
-		border-right: none;
-	}
-
-	.collapse.in{
-		display:block;
-	}
-}
-
 @media only screen and (min-width:730px) and (max-width: 1200px){
 	.time{
 		margin-left: 250px;
