@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Easy LineUp</title>
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		function GetDirection(sw) {
+			if (sw == 0) {
+				localStorage.setItem("direction","UCSD => VOR");
+			} else {
+				localStorage.setItem("direction","VOR => UCSD");
+			}
+			window.location.href='timeslot.html';
+		}
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo-nav" href="#"><img src="img/logo.png"></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<!-- bootstrap class "navbar-right" will float to the right -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="chatroom.html">Chatting Room</a></li>
+					<li><a href="login.html">Logout</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+
+	<h1 style="margin-top:130px">Choose Your Route</h1>
+	<div class="address" style="border:none">
+		<button onclick="GetDirection(0)"><span>UCSD => VOR</span></button>
+		<button onclick="GetDirection(1)"><span>VOR => UCSD</span></button>
+	</div>
+
+	<footer>
+		<p>Easy LineUp &copy; 2018, All Rights Reserved</p>
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+	<script src="js/bootstrap.js"></script>
+
+</body>
+</html>
