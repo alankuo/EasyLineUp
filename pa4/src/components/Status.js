@@ -61,7 +61,7 @@ class Status extends React.Component {
                                     <h2>You are<strong> #3 </strong>of the Queue.</h2>
                                 </div>
                                 <div>
-                                    <button onclick="window.location.href='chat.html'"><span>Chatting Room</span></button>
+                                    <Link to = '/chat'><button onclick="window.location.href='chat.html'"><span>Chatting Room</span></button></Link>
                                 </div>
                                 <div>
                                     <Link to ={link}><span>Cancel</span></Link>
@@ -69,7 +69,7 @@ class Status extends React.Component {
                             </div>
                         </div>
                     <Footer />
-                </div>                
+                </div>
             </div>
         );
     }

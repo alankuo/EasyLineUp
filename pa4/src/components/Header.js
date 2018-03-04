@@ -57,7 +57,7 @@ export default class Header extends React.Component {
             <ul className="nav navbar-nav navbar-right">
               <li className={this.state.homeVal}><Link to="/" onClick={() => {this.updateValue("")}}>Home</Link></li>
               <li className={this.state.profileVal}><Link to="profile" onClick={() => {this.updateValue("profile")}}>Profile</Link></li>
-              <li className={this.state.chatVal}><Link to="chatroom" onClick={() => {this.updateValue("chatting")}}>Chatting Room</Link></li>
+              <li className={this.state.chatVal}><Link to="chat" onClick={() => {this.updateValue("chatting")}}>Chatting Room</Link></li>
               <li><Link to="login" onClick={() => {this.updateValue("logout")}}>Logout</Link></li>
             </ul>
           </div>

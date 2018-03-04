@@ -3,7 +3,7 @@ import {Route, IndexRoute} from 'react-router';
 
 import Chat from './Chat';
 import App from './App';
-
+import Driver from './Driver';
 import Login from './Login';
 import Register from './Register';
 import Reset from './Reset';

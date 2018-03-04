@@ -6,21 +6,21 @@ import {Link,browserHistory} from 'react-router';
 
 class Confirmation extends React.Component {
 
-    
+
     constructor(props){
         super(props);
     }
-    
+
     render() {
         var divStyle = {
             padding:"40px 0 50px 0"
         };
-        
+
         var countdown = `/Status/${this.props.params.time}`;
         console.log(countdown);
         return (
             <div>
-                <Header />    
+                <Header />
                 <div className="container">
                     <div className="time">
                         <div className="header">

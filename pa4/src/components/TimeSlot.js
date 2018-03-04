@@ -68,7 +68,7 @@ class TimeSlot extends React.Component {
                             <li><button type="button" class="btn btn-info">8:30</button></li> */}
                             {this.renderTime()}
                         </ul>
-                            <Link to = "/Home" class="btn">Back</Link>
+                            <Link to = "/" class="btn">Back</Link>
                         </div>
                     </div>
                 </div>
