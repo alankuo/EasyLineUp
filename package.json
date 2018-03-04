@@ -1,7 +1,7 @@
 {
   "name": "easylineup",
   "version": "1.0.0",
-  "description": "## Synopsis EasyLineUp is a web-app that provides a platform between users where line-up process is required, aiming to decrease the time spent physically waiting in the line to increase productivity of both sides of users. There are two view options, one for the users lining up; the other for the users inquiring the queue. A typical usage example would be a shuttle line-up application. EasyLineUp wishes to provide the most convenient platform for both sides of users throughout the line-up process.",
+  "description": "## Synopsis EasyLineUp is a web-app that provides a platform between users where line-up process is required, aiming to decrease the time spent physically waiting in the line to increase productivity of both sides of users. There are two view options, one for the users lining up; the other for the users inquiring the queue. A typical usage example would be  a shuttle line-up application. EasyLineUp wishes to provide the most convenient platform for both sides of users throughout the line-up process.",
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --inline --hot --history-api-fallback"
@@ -19,18 +19,21 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
     "webpack": "^3.11.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
     "style-loader": "^0.20.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
