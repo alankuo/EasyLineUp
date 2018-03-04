@@ -1,0 +1,179 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+}
+img,span,li{
+	display: block;
+}
+p{
+	display: inline-block;
+}
+#back_btn{
+	font-size: 20px;
+	background-color: white;
+	border: none;
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	text-decoration: none;
+	color: black;
+}
+#back_btn:hover{
+	color: #ef262b;
+	cursor: pointer;
+}
+.right{
+	float: right;
+}
+.left{
+	float: left;
+}
+.container{
+		height: auto;
+		width: 600px;
+		margin:0 auto;
+		border-radius: 15px;
+		position: relative;
+}
+.navi{
+	height: 100px;
+	padding-top: 20px;
+}
+.navi h1{
+	width: 100%;
+	text-align: center;
+}
+.window{
+	border: 1px solid;
+}
+.user_queue{
+	height: 500px;
+	width: 100%;
+	border-top:1px solid;
+	border-bottom:1px solid;
+	overflow: scroll;
+	background-color: #f0f0f0;
+}
+.user_queue li{
+	width: 100%;
+	/*height: 100px;*/
+	margin: 10px auto;
+	display: inline-block;
+}
+.user_queue .box-right .icon,.user_queue .box-right .msg{
+	float: right;
+}
+.user_queue .box-left .icon,.user_queue .box-left .msg{
+	float: left;
+}
+.user_queue .box-right .msg p{
+	background-color: #92e749;
+}
+.user_queue .box-left .triangle{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: white;
+	transform: rotate(45deg);
+	top: 35px;
+	left: -5px;
+}
+.user_queue .box-right .triangle{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: white;
+	transform: rotate(45deg);
+	top: 15px;
+	left: 345px;
+	background-color: #92e749;
+}
+/*icon*/
+.user_queue li .icon{
+	width: 30px;
+	height: 100%;
+	margin: 0 10px;
+}
+.user_queue li .icon img{
+	width: 30px;
+	height: 30px;
+	margin: auto;
+}
+/*message*/
+.user_queue li .msg{
+	width: 350px;
+	height: 100%;
+	position: relative;
+}
+.user_queue li .msg span{
+	color: #a5a5a5;
+	font-size: 13px;
+	font-weight: normal;
+	font-family: Aria;
+}
+.user_queue li .msg p{
+	width: auto;
+	word-wrap: break-word;
+	hyphens: auto;
+	border-radius: 6px;
+	padding: 15px 10px 10px 10px ;
+	background-color: white;
+	font-size:  15px;
+	font-family: Aira;
+}
+/* input box */
+.input{
+	height: 120px;
+	padding: 10px;
+}
+.input textarea{
+	height: 100%;
+	overflow: scroll;
+	width: 530px;
+	border: 0;
+	resize: none;
+}
+.input textarea:focus{
+	outline: none !important;
+	border: none;
+}
+.input button{
+	width: 40px;
+	height: 40px;
+	border-radius: 25px;
+	border: 2px solid red;
+	background-color: white;
+	float: right;
+	margin-top:60px;
+}
+.input button:focus{
+	float: top;
+}
+@media only screen and (max-width:680px){
+	.navi{
+		height:60px;
+	}
+	.navi h1{
+		font-size: 26px;
+	}
+	.container{
+		width:330px;
+	}
+	#back_btn{
+		font-size: 16px;
+	}
+	.user_queue li .msg{
+		width:180px;
+	}
+	.user_queue .box-right .triangle{
+		left:175px;
+	}
+	.user_queue{
+		height:400px;
+	}
+	.input textarea{
+		width:240px;
+	}
+}
