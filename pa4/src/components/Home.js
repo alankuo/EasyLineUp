@@ -1,6 +1,5 @@
-
 import React from 'react';
-import {Link} from 'react-router';
+import {Link,browserHistory} from 'react-router';
 
 export default class Home extends React.Component{
 
@@ -13,13 +12,14 @@ export default class Home extends React.Component{
         window.location.href='timeslot';
     }
 
+
     render(){
         return (
             <div>
                 <h1 style={{marginTop:130+'px'}}>Choose Your Route</h1>
                 <div className="address" style={{border:'none'}}>
-                    <button onClick={this.GetDirection0}><span>UCSD => VOR</span></button>
-                    <button onClick={this.GetDirection1}><span>VOR => UCSD</span></button>
+                    <Link to = "/TimeSlot/UCSD => VOR" onClick={this.GetDirection0}><button><span>UCSD => VOR</span></button></Link>
+                    <Link to = "/TimeSlot/VOR => UCSD"  onClick={this.GetDirection1}><button><span>VOR => UCSD</span></button></Link>
                 </div>
             </div>
         );
