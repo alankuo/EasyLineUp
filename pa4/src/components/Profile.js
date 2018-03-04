@@ -22,7 +22,17 @@ class Profile extends React.Component{
     // Bind all functions so they can refer to "this" correctly
     this.saveProfile = this.saveProfile.bind(this);
   }
-
+  componentDidMount() {
+    if (localStorage["username"] == undefined) {
+      document.getElementsByName("username")[0].value = "";
+      document.getElementsByName("phone")[0].value = "";
+      document.getElementsByName("email")[0].value = "";
+    } else {
+      document.getElementsByName("username")[0].value = localStorage["username"];
+      document.getElementsByName("phone")[0].value = localStorage["phone"];
+      document.getElementsByName("email")[0].value = localStorage["email"];
+    }
+  }
   saveProfile(e){
     localStorage.setItem("username",document.getElementsByName("username")[0].value);
     localStorage.setItem("phone",document.getElementsByName("phone")[0].value);
@@ -41,7 +51,7 @@ class Profile extends React.Component{
           <form>
             <div className="input-group">
               <label>Username</label>
-              <input type="text" name="username" defaultValue="johndoe" />
+              <input type="text" name="username" defaultValue="johndoe"/>
             </div>
             <div className="input-group">
                <label>Phone</label>
@@ -49,7 +59,7 @@ class Profile extends React.Component{
              </div>
              <div className="input-group">
                <label>Email</label>
-               <input type="email" name="email" defaultValue="johndoe@example.com" />
+               <input type="email" name="email" defaultValue="johndoe@example.com"/>
              </div>
              <p>By submitting this information, you indicate that you agree to EasyLineUp's <strong>Terms of Service</strong> and have read and understood our <strong>Privacy Policy</strong>.</p>
              <div className="input-group">
