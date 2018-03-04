@@ -36,7 +36,7 @@ export default class Header extends React.Component {
       this.setState({profileVal:"active"});
     }
     else if(value=="chatVal"){
-      this.setStaet({chatVal:"active"});
+      this.setState({chatVal:"active"});
     }
   }
 
