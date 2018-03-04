@@ -41,15 +41,15 @@ class Profile extends React.Component{
           <form>
             <div className="input-group">
               <label>Username</label>
-              <input type="text" name="username" value="johndoe" readOnly/>
+              <input type="text" name="username" defaultValue="johndoe" />
             </div>
             <div className="input-group">
                <label>Phone</label>
-               <input type="text" name="phone" value="(123)456-7890" readOnly/>
+               <input type="text" name="phone" defaultValue="(123)456-7890"/>
              </div>
              <div className="input-group">
                <label>Email</label>
-               <input type="email" name="email" value="johndoe@example.com" readOnly/>
+               <input type="email" name="email" defaultValue="johndoe@example.com" />
              </div>
              <p>By submitting this information, you indicate that you agree to EasyLineUp's <strong>Terms of Service</strong> and have read and understood our <strong>Privacy Policy</strong>.</p>
              <div className="input-group">
