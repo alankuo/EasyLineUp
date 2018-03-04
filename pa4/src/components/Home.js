@@ -1,7 +1,18 @@
 import React from 'react';
 import {Link,browserHistory} from 'react-router';
 
-export default class Home extends React.Component{    
+export default class Home extends React.Component{
+
+    GetDirection0() {
+        localStorage.setItem("direction","UCSD => VOR");
+        window.location.href='timeslot';
+    }
+    GetDirection1() {
+        localStorage.setItem("direction","VOR => UCSD");
+        window.location.href='timeslot';
+    }
+
+
     render(){
         return (
             <div>
