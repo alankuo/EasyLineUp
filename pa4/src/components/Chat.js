@@ -1,0 +1,51 @@
+import React from 'react';
+import '../css/chat.css';
+import icon1 from '../img/icon.jpeg';
+import icon2 from '../img/icon2.jpg';
+import icon3 from '../img/icon3.jpg';
+import {Link} from 'react-router';
+
+export default class Chat extends React.Component{
+    componentDidMount() {
+        document.querySelector(".input textarea").onkeypress = function(e){
+                if(e.which == 13){
+                    e.preventDefault();
+                    document.querySelector(".input button").click();
+                    document.querySelector('.input textarea').value = "";
+                }
+        }
+        console.log('a');
+        document.querySelector(".input button").onclick = function(e){
+                console.log('a');
+                var msg = ` <li class="box-right">\
+                        <div class="icon">\
+                            <img src=${icon3} alt="Flowers" />\
+                        </div>\
+                        <div class="msg">\
+                            <div class="triangle"></div>\
+                            <p class="right">${document.querySelector('.input textarea').value}</p>\
+                        </div>\
+                    </li>`;
+                document.querySelector('.user_queue').innerHTML += msg;
+                document.querySelector('.user_queue').scrollTop += 100000000000;
+                document.querySelector('.input textarea').value = "";
+        }
+    }
+
+    render() {
+        return (
+            <div className="container window">
+                <Link id='back_btn' to="/">&lt;Back</Link>
+                <div className="navi">
+                    <h1>Chat Room 3</h1>
+                </div>
+                <ul className="user_queue">
+                </ul>
+                <div className="input">
+                    <textarea></textarea>
+                    <button className="btn">Send</button>
+                </div>
+            </div>
+        );
+    }
+}

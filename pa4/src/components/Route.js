@@ -1,6 +1,9 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
+
+import Chat from './Chat';
 import App from './App';
+
 import Login from './Login';
 import Register from './Register';
 import Reset from './Reset';
@@ -23,5 +26,7 @@ export default(
     <Route path="home" component={Home}/>
     <Route path="confirmation/:time" component={Confirmation}/>
     <Route path="status/:countDown" component={Status}/>
+    <Route path="chat" component={Chat}/>
+    <Route path="driver" component={Driver}/>
   </Route>
 )
