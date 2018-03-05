@@ -12,11 +12,11 @@ class Confirmation extends React.Component {
     }
 
     render() {
-        var divStyle = {
+        let divStyle = {
             padding:"40px 0 50px 0"
         };
 
-        var countdown = `/Status/${this.props.params.time}`;
+        let countdown = `/Status/${this.props.params.time}`;
         console.log(countdown);
         return (
             <div>

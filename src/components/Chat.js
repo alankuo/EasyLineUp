@@ -8,12 +8,12 @@ import {Link} from 'react-router';
 export default class Chat extends React.Component{
     constructor() {
         super();
-    
+
         // Initial state
         this.state = {
-          message:[],
+          message:[]
         };
-    }   
+    }
     componentDidMount() {
         document.querySelector(".input textarea").onkeypress = function(e){
                 if(e.which == 13){
@@ -21,11 +21,11 @@ export default class Chat extends React.Component{
                     document.querySelector(".input button").click();
                     document.querySelector('.input textarea').value = "";
                 }
-        }
+        };
         console.log('a');
         document.querySelector(".input button").onclick = (function(e){
                 // console.log('a');
-                
+
                 // var msg = ` <li class="box-right">\
                 //         <div class="icon">\
                 //             <img src=${icon3} alt="Flowers" />\
@@ -42,15 +42,15 @@ export default class Chat extends React.Component{
                 this.setState({message:msg});
                 document.querySelector('.user_queue').scrollTop += 100000000000;
                 document.querySelector('.input textarea').value = "";
-                
+
         }).bind(this);
     }
 
     renderChat() {
         console.log("render");
-        var msg = [];
+        let msg = [];
         for(let i=0; i<this.state.message.length; i++){
-            
+
             msg.push(
             <li className="box-right">
                 <div className="icon">
@@ -70,7 +70,7 @@ export default class Chat extends React.Component{
     render() {
         return (
             <div className="container window">
-                <Link id='back_btn' to="/">&lt;Back</Link>
+                <Link id="back_btn" to="/">&lt;Back</Link>
                 <div className="navi">
                     <h1>Chat Room 3</h1>
                 </div>

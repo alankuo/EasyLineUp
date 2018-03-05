@@ -11,10 +11,10 @@ class TimeSlot extends React.Component {
     }
 
     renderTime() {
-        var d = new Date();
-        var hour = d.getHours();
-        var currMin = d.getMinutes();
-        var min;
+        let d = new Date();
+        let hour = d.getHours();
+        let currMin = d.getMinutes();
+        let min;
         if (currMin >=0 && currMin<15) {
             min = 15;
         } else if (currMin >= 15 && currMin < 30) {
@@ -24,22 +24,24 @@ class TimeSlot extends React.Component {
         } else {
             min = 0;
         }
-        var items = [];
-        for (var i = 0, length = 7; i < length; i++)
+        let items = [];
+        for (let i = 0, length = 7; i < length; i++)
         {
             // if (items[i].nodeType != 1) {
             //    continue;
             // }
+            let time;
+            let link;
             if (min >= 60 || min == 0) {
                 hour = hour + 1;
                 min = 0;
-                var time = `${hour}:00`;
-                var link = `/confirmation/${time}`;
-                items.push(<li><Link to={link}><button type="button" class="btn btn-primary">{time}</button></Link></li>);
+                time = `${hour}:00`;
+                link = `/confirmation/${time}`;
+                items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
             } else {
-                var time = `${hour}:${min}`;
-                var link = `/confirmation/${time}`;
-                items.push(<li><Link to={link}><button type="button" class="btn btn-primary">{time}</button></Link></li>);
+                time = `${hour}:${min}`;
+                link = `/confirmation/${time}`;
+                items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
             }
 
             min += 15;
@@ -68,7 +70,7 @@ class TimeSlot extends React.Component {
                             <li><button type="button" class="btn btn-info">8:30</button></li> */}
                             {this.renderTime()}
                         </ul>
-                            <Link to = "/" class="btn">Back</Link>
+                            <Link to = "/" className="btn">Back</Link>
                         </div>
                     </div>
                 </div>

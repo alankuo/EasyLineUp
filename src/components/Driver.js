@@ -11,8 +11,8 @@ import icon from '../img/icon.jpeg';
 export default class Driver extends React.Component{
 
     componentDidMount() {
-        var arr = document.querySelectorAll(".checklist ul li");
-        for(var i=0; i<arr.length; i++){
+        let arr = document.querySelectorAll(".checklist ul li");
+        for(let i=0; i<arr.length; i++){
             arr[i].onclick = function(e){
                 e.preventDefault();
                 if(this.style.backgroundColor == "rgb(0, 184, 217)"){
@@ -22,7 +22,7 @@ export default class Driver extends React.Component{
                     this.style.backgroundColor = "#00b8d9";
                     this.querySelector('.tick').innerHTML = '&#215';
                 }
-            }
+            };
         }
 
     }
@@ -35,7 +35,7 @@ export default class Driver extends React.Component{
                         <h1> 7:15 P.M. </h1>
                         <div className="msg">
                             <div className="wrap">
-                                <Link to='/chat'>
+                                <Link to="/chat">
                                     <img src={msg} alt="empty" />
                                     <h1>4</h1>
                                 </Link>
