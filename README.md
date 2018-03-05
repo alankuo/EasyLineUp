@@ -19,7 +19,7 @@ npm start
 * React
 
 ## Contributors
-(sorted alphabetically)
+(sorted alphabetically:musical_note:)
 * Alan Kuo
 * Chaolei Hua
 * Zifeng Xie
