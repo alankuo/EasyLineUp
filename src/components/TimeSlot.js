@@ -9,10 +9,6 @@ class TimeSlot extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {
-          route: this.props.route
-        };
-
         this.renderTime = this.renderTime.bind(this);
     }
 
@@ -59,7 +55,7 @@ class TimeSlot extends React.Component {
               (<div className="container">
                     <div className="time">
                         <div className="header">
-                            <h1>{this.state.route}</h1>
+                            <h1>{this.props.route}</h1>
                         </div>
                         <div className="address">
                         <ul className="schedule">

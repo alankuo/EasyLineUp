@@ -51,7 +51,7 @@ describe('test Home', () => {
   it('should pass for click home', () => {
     const wrapper = shallow(<Home />);
     wrapper.find('button').at(0).simulate('click');
-    console.log(wrapper.text());
+    // console.log(wrapper.text());
     expect(true).toEqual(true);
   });
 });

@@ -13,6 +13,8 @@ export default class Chat extends React.Component{
         this.state = {
           message:[]
         };
+
+        this.clickFunction = this.clickFunction.bind(this);
     }
     componentDidMount() {
         document.querySelector(".input textarea").onkeypress = function(e){
@@ -22,7 +24,7 @@ export default class Chat extends React.Component{
                     document.querySelector('.input textarea').value = "";
                 }
         };
-        console.log('a');
+        // console.log('a');
         document.querySelector(".input button").onclick = (function(e){
                 // console.log('a');
 
@@ -38,7 +40,7 @@ export default class Chat extends React.Component{
                 // document.querySelector('.user_queue').innerHTML += msg;
                 let msg = this.state.message;
                 msg.push(document.querySelector('.input textarea').value);
-                console.log(document.querySelector('.input textarea').value);
+                // console.log(document.querySelector('.input textarea').value);
                 this.setState({message:msg});
                 document.querySelector('.user_queue').scrollTop += 100000000000;
                 document.querySelector('.input textarea').value = "";
@@ -46,8 +48,10 @@ export default class Chat extends React.Component{
         }).bind(this);
     }
 
+    clickFunction(){}
+
     renderChat() {
-        console.log("render");
+        // console.log("render");
         let msg = [];
         for(let i=0; i<this.state.message.length; i++){
 
