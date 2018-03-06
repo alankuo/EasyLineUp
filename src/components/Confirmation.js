@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import Home from './Home';
-import {Link,browserHistory} from 'react-router';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router';
 import Status from './Status';
 
 class Confirmation extends React.Component {
@@ -12,7 +11,6 @@ class Confirmation extends React.Component {
         super(props);
 
         this.state = {
-          time: this.props.time,
           queueUp: false
         };
 
@@ -42,12 +40,19 @@ class Confirmation extends React.Component {
                                 <span style={{fontSize:55+'px',color:"red"}}>{this.props.time}</span>
                             </div>
                             <a onClick={this.props.resetTime} className="btn">Back</a>
-                            <a onClick={() => {this.setQueueUp();}} className="btn">Line-Up</a>
+                            <a onClick={this.setQueueUp} className="btn">Line-Up</a>
                         </div>
                     </div>
-                </div>):<Status time={this.state.time} resetEverything={this.props.resetEverything}/>}
+                </div>):<Status time={this.props.time} resetEverything={this.props.resetEverything}/>}
             </div>
         );
     }
 }
+
+Confirmation.propTypes = {
+   time: PropTypes.string,
+   resetTime: PropTypes.func,
+   resetEverything: PropTypes.func
+ };
+
 export default Confirmation;

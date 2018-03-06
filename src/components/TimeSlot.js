@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './Home';
 import PropTypes from 'prop-types';
-import {Link,browserHistory} from 'react-router';
 import Confirmation from './Confirmation';
 import TimeButton from './TimeButton';
 

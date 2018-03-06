@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Home from './Home';
-import {Link,browserHistory} from 'react-router';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router';
 
 class Status extends React.Component {
     constructor(props){
@@ -38,7 +36,7 @@ class Status extends React.Component {
       if (sec < 10) {
         sec = "0"+sec;
       }
-      console.log(sec);
+      // console.log(sec);
       document.getElementById("timeleft").innerHTML = hour + ": "+ min + ": " + sec;
       this.clock = setTimeout(this.Countdown.bind(this),1000);
     }
@@ -64,7 +62,7 @@ class Status extends React.Component {
                   <Link to = "/chat"><button><span>Chatting Room</span></button></Link>
                 </div>
                 <div>
-                  <a onClick={()=>{this.props.resetEverything();}} className="cancelLink btn"><span>Cancel</span></a>
+                  <a onClick={this.props.resetEverything} className="cancelLink btn"><span>Cancel</span></a>
                 </div>
               </div>
             </div>
@@ -73,4 +71,10 @@ class Status extends React.Component {
       );
     }
 }
+
+Status.propTypes = {
+   time: PropTypes.string,
+   resetEverything: PropTypes.func
+ };
+
 export default Status;
