@@ -33,7 +33,7 @@ export default class App extends React.Component{
 
   changeTime(value){
     this.setState({selectedTime:value});
-    console.log("time selected: " + value);
+    // console.log("time selected: " + value);
   }
 
   resetTime(value){
@@ -42,14 +42,14 @@ export default class App extends React.Component{
 
   resetEverything(){
     this.setState({route:"",selectedTime:''});
-    console.log("home reset");
+    // console.log("home reset");
   }
 
   render(){
     return (
       <div>
         <Header pageName="" resetEverything={this.resetEverything}/>
-        <Home route={this.state.route} selectedTime={this.props.selectedTime} changeRoute={this.changeRoute} resetRoute={this.resetRoute} changeTime={this.changeTime} resetTime={this.resetTime} resetEverything={this.resetEverything} selectedTime={this.state.selectedTime}/>
+        <Home route={this.state.route} selectedTime={this.state.selectedTime} changeRoute={this.changeRoute} resetRoute={this.resetRoute} changeTime={this.changeTime} resetTime={this.resetTime} resetEverything={this.resetEverything} />
         <Footer />
       </div>
     );
