@@ -17,16 +17,10 @@ class Confirmation extends React.Component {
         };
 
         this.setQueueUp = this.setQueueUp.bind(this);
-        this.resetEverything = this.resetEverything.bind(this);
     }
 
     setQueueUp(){
       this.setState({queueUp:true});
-    }
-
-    resetEverything(){
-      this.props.resetEverything();
-      console.log("confirmation reset");
     }
 
     render() {
@@ -51,7 +45,7 @@ class Confirmation extends React.Component {
                             <a onClick={() => {this.setQueueUp();}} className="btn">Line-Up</a>
                         </div>
                     </div>
-                </div>):<Status time={this.state.time} resetEverything={this.resetEverything}/>}
+                </div>):<Status time={this.state.time} resetEverything={this.props.resetEverything}/>}
             </div>
         );
     }

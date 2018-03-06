@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from '../img/logo.png';
 import {Link} from 'react-router';
+import PropTypes from 'prop-types';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -55,10 +56,10 @@ export default class Header extends React.Component {
           </div>
           <div id="navbar" className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
-              <li className={this.state.homeVal}><Link to="/" onClick={() => {this.updateValue("");}}>Home</Link></li>
-              <li className={this.state.profileVal}><Link to="profile" onClick={() => {this.updateValue("profile");}}>Profile</Link></li>
-              <li className={this.state.chatVal}><Link to="chat" onClick={() => {this.updateValue("chatting");}}>Chatting Room</Link></li>
-              <li><Link to="login" onClick={() => {this.updateValue("logout");}}>Logout</Link></li>
+              <li className={this.state.homeVal}><Link to="/" onClick={this.props.resetEverything}>Home</Link></li>
+              <li className={this.state.profileVal}><Link to="profile" onClick={this.props.resetEverything}>Profile</Link></li>
+              <li className={this.state.chatVal}><Link to="chat" onClick={this.props.resetEverything}>Chatting Room</Link></li>
+              <li><Link to="login" onClick={this.props.resetEverything}>Logout</Link></li>
             </ul>
           </div>
         </div>
@@ -66,3 +67,10 @@ export default class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+   pageName: PropTypes.string,
+   resetEverything: PropTypes.func
+};
+
+export default Header;

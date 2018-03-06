@@ -12,29 +12,10 @@ class TimeSlot extends React.Component {
         super(props);
 
         this.state = {
-          route: this.props.route,
-          selectedTime: ''
+          route: this.props.route
         };
 
         this.renderTime = this.renderTime.bind(this);
-        this.changeTime = this.changeTime.bind(this);
-        this.resetTime = this.resetTime.bind(this);
-        this.resetEverything = this.resetEverything.bind(this);
-    }
-
-    changeTime(value){
-      this.setState({selectedTime:value});
-      console.log("time selected: " + value);
-    }
-
-    resetTime(value){
-      this.setState({selectedTime:''});
-    }
-
-    resetEverything(){
-      console.log("timeslot reset");
-      this.setState({selectedTime:''});
-      this.props.resetEverything();
     }
 
     renderTime() {
@@ -65,12 +46,12 @@ class TimeSlot extends React.Component {
                 time = `${hour}:00`;
                 link = `/confirmation/${time}`;
                 // items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
-                items.push(<li><TimeButton time={time} changeTime={this.changeTime}/></li>);
+                items.push(<li><TimeButton time={time} changeTime={this.props.changeTime}/></li>);
             } else {
                 time = `${hour}:${min}`;
                 link = `/confirmation/${time}`;
                 // items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
-                items.push(<li><TimeButton time={time} changeTime={this.changeTime}/></li>);
+                items.push(<li><TimeButton time={time} changeTime={this.props.changeTime}/></li>);
             }
 
             min += 15;
@@ -81,7 +62,7 @@ class TimeSlot extends React.Component {
 
     render() {
       // console.log("TimeSlot route: " + this.state.route);
-      const value = this.state.selectedTime;
+      const value = this.props.selectedTime;
         return (
             <div>
               {value == '' ?
@@ -97,7 +78,7 @@ class TimeSlot extends React.Component {
                             <a onClick={()=> {this.props.resetRoute();}} className="btn">Back</a>
                         </div>
                     </div>
-                </div>):<Confirmation time={value} resetTime={this.resetTime} resetEverything={this.resetEverything}/>}
+                </div>):<Confirmation time={value} resetTime={this.props.resetTime} resetEverything={this.props.resetEverything}/>}
             </div>
         );
     }
