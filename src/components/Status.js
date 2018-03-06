@@ -21,7 +21,7 @@ class Status extends React.Component {
       let currDate = new Date();
       let now = currDate.getTime();
       let month = currDate.getMonth()+1;
-      let str = "2018/"+month+"/"+currDate.getDate()+ " "+this.props.params.countDown;
+      let str = "2018/"+month+"/"+currDate.getDate()+ " "+this.props.time;
       let endDate = new Date(str);
       let end = endDate.getTime();
       let diff = end - now;
@@ -44,35 +44,33 @@ class Status extends React.Component {
     }
 
     render() {
-        let link = `/Confirmation/${this.props.params.countDown}`;
-        return (
-            <div>
-                <Header />
-                    <div className="container">
-                        <div className="time">
-                            <div className="header">
-                                <h1>You Are In the Queue!</h1>
-                            </div>
-                            <div className="address">
-                                <p style={{fontWeight:"bold", fontSize:20+"px"}}>Time remaining until shuttle time:</p>
-                                <div className="countdown">
-                                    <h1 id="timeleft">00</h1>
-                                </div>
-                                <div className="info">
-                                    <h2>You are<strong> #3 </strong>of the Queue.</h2>
-                                </div>
-                                <div>
-                                    <Link to = "/chat"><button><span>Chatting Room</span></button></Link>
-                                </div>
-                                <div>
-                                    <Link to ={link} className="cancelLink"><span>Cancel</span></Link>
-                                </div>
-                            </div>
-                        </div>
-                    <Footer />
+      // let link = `/Confirmation/${this.props.time}`;
+      return (
+        <div>
+          <div className="container">
+            <div className="time">
+              <div className="header">
+                <h1>You Are In the Queue!</h1>
+              </div>
+              <div className="address">
+                <p style={{fontWeight:"bold", fontSize:20+"px"}}>Time remaining until shuttle time:</p>
+                <div className="countdown">
+                  <h1 id="timeleft">00</h1>
                 </div>
+                <div className="info">
+                  <h2>You are<strong> #3 </strong>of the Queue.</h2>
+                </div>
+                <div>
+                  <Link to = "/chat"><button><span>Chatting Room</span></button></Link>
+                </div>
+                <div>
+                  <a onClick={()=>{this.props.resetEverything();}} className="cancelLink btn"><span>Cancel</span></a>
+                </div>
+              </div>
             </div>
-        );
+          </div>
+        </div>
+      );
     }
 }
 export default Status;

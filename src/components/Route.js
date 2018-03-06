@@ -21,7 +21,7 @@ export default(
     <Route path="register" component={Register}/>
     <Route path="reset" component={Reset}/>
     <Route path="profile" component={Profile}/>
-    <Route path="timeslot/:name" component={TimeSlot}/>
+    {/* <Route path="timeslot/:name" component={TimeSlot}/> */}
     <Route path="timeslot" component={TimeSlot}/>
     <Route path="home" component={Home}/>
     <Route path="confirmation/:time" component={Confirmation}/>

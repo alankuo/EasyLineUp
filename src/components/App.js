@@ -6,13 +6,13 @@ import Home from './Home';
 
 
 export default class App extends React.Component{
-    render(){
-        return (
-            <div>
-                <Header pageName=""/>
-                <Home />
-                <Footer />
-            </div>
-        );
-    }
+  render(){
+    return (
+      <div>
+        <Header pageName=""/>
+        <Home />
+        <Footer />
+      </div>
+    );
+  }
 }

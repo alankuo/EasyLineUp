@@ -57,17 +57,17 @@ describe('test Home', () => {
 });
 
 //Testing Status
-describe('test Status', () => {
-  it('should pass for home', () => {
-    const wrapper = setupStatus("7:00");
-    expect(wrapper.find('.cancelLink').props().to).toEqual('/Confirmation/7:00');
-  });
-
-  it('should pass for home', () => {
-    const wrapper = setupStatus("12:00");
-    expect(wrapper.find('.cancelLink').props().to).toEqual('/Confirmation/12:00');
-  });
-});
+// describe('test Status', () => {
+//   it('should pass for home', () => {
+//     const wrapper = setupStatus("7:00");
+//     expect(wrapper.find('.cancelLink').props().to).toEqual('/Confirmation/7:00');
+//   });
+//
+//   it('should pass for home', () => {
+//     const wrapper = setupStatus("12:00");
+//     expect(wrapper.find('.cancelLink').props().to).toEqual('/Confirmation/12:00');
+//   });
+// });
 
 describe('Our first test', () => {
   it('should pass', () => {

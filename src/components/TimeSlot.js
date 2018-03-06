@@ -3,11 +3,38 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import {Link,browserHistory} from 'react-router';
+import Confirmation from './Confirmation';
+import TimeButton from './TimeButton';
+
 class TimeSlot extends React.Component {
 
     constructor(props){
         super(props);
-        this.schedule = "/Confirmation/hello";
+
+        this.state = {
+          route: this.props.route,
+          selectedTime: ''
+        };
+
+        this.renderTime = this.renderTime.bind(this);
+        this.changeTime = this.changeTime.bind(this);
+        this.resetTime = this.resetTime.bind(this);
+        this.resetEverything = this.resetEverything.bind(this);
+    }
+
+    changeTime(value){
+      this.setState({selectedTime:value});
+      console.log("time selected: " + value);
+    }
+
+    resetTime(value){
+      this.setState({selectedTime:''});
+    }
+
+    resetEverything(){
+      console.log("timeslot reset");
+      this.setState({selectedTime:''});
+      this.props.resetEverything();
     }
 
     renderTime() {
@@ -37,11 +64,13 @@ class TimeSlot extends React.Component {
                 min = 0;
                 time = `${hour}:00`;
                 link = `/confirmation/${time}`;
-                items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
+                // items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
+                items.push(<li><TimeButton time={time} changeTime={this.changeTime}/></li>);
             } else {
                 time = `${hour}:${min}`;
                 link = `/confirmation/${time}`;
-                items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
+                // items.push(<li><Link to={link}><button type="button" className="btn btn-primary">{time}</button></Link></li>);
+                items.push(<li><TimeButton time={time} changeTime={this.changeTime}/></li>);
             }
 
             min += 15;
@@ -51,30 +80,24 @@ class TimeSlot extends React.Component {
 
 
     render() {
+      // console.log("TimeSlot route: " + this.state.route);
+      const value = this.state.selectedTime;
         return (
             <div>
-                <Header />
-                <div className="container">
+              {value == '' ?
+              (<div className="container">
                     <div className="time">
                         <div className="header">
-                            <h1>{this.props.params.name}</h1>
+                            <h1>{this.state.route}</h1>
                         </div>
                         <div className="address">
                         <ul className="schedule">
-                            {/* <li><Link to="a"><button type="button" class="btn btn-info">7:00</button></Link></li>
-                            <li><button type="button" class="btn btn-info">7:15</button></li>
-                            <li><button type="button" class="btn btn-info">7:30</button></li>
-                            <li><button type="button" class="btn btn-info">7:45</button></li>
-                            <li><button type="button" class="btn btn-info">8:00</button></li>
-                            <li><button type="button" class="btn btn-info">8:15</button></li>
-                            <li><button type="button" class="btn btn-info">8:30</button></li> */}
                             {this.renderTime()}
                         </ul>
-                            <Link to = "/" className="btn">Back</Link>
+                            <a onClick={()=> {this.props.resetRoute();}} className="btn">Back</a>
                         </div>
                     </div>
-                </div>
-                <Footer />
+                </div>):<Confirmation time={value} resetTime={this.resetTime} resetEverything={this.resetEverything}/>}
             </div>
         );
     }
