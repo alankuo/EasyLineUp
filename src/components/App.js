@@ -3,7 +3,6 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 
-
 export default class App extends React.Component{
   constructor(props){
     super(props);
@@ -21,6 +20,7 @@ export default class App extends React.Component{
     this.resetTime = this.resetTime.bind(this);
     this.resetEverything = this.resetEverything.bind(this);
   }
+
 
   changeRoute(value){
     this.setState({route:value});

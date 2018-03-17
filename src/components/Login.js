@@ -1,6 +1,7 @@
 
 import React from 'react';
 import {Link} from 'react-router';
+import data from '../account.js';
 
 class Login extends React.Component{
 
@@ -20,16 +21,27 @@ class Login extends React.Component{
 
     // Bind all functions so they can refer to "this" correctly
     this.validateLogin = this.validateLogin.bind(this);
+
+    // console.log("DATA: " + JSON.stringify(data));
+    // console.log(data.length);
   }
 
   validateLogin(e){
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-    if ( username == "alan" && password == "kuo"){
-      alert ("Login successfully");
-      this.setState({routeAddress:"/"});
+    let verification = false;
+    let veriUser = "";
+    let veriPassword = "";
+    for(let i=0; i<data.length;i++){
+      veriUser = data[i].name;
+      veriPassword = data[i].password;
+      if(veriUser == username && veriPassword == password){
+        verification = true;
+        alert ("Login successfully");
+        this.setState({routeAddress:"/"});
+      }
     }
-    else{
+    if(!verification){
       alert("username and password do not match!");
       e.preventDefault();
     }

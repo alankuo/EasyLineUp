@@ -28,3 +28,5 @@ app.listen(port, function(err) {
     open(`http://localhost:${port}`);
   }
 });
+
+app.use(express.static(path.join(__dirname, '../src/img')));
