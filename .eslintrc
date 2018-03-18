@@ -1,4 +1,7 @@
 {
+  "settings": {
+    "import/ignore": [".css$","node_modules/*"]
+  },
   "extends": [
     "eslint:recommended",
     "plugin:import/errors",

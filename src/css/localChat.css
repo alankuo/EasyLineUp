@@ -1,0 +1,13 @@
+:local(.container){
+    height: auto;
+    width: 600px;
+    margin:0 auto;
+    border-radius: 15px;
+	position: relative;
+	border: 1px solid;
+
+}
+:local(.navi){
+height: 100px;
+padding-top: 20px;
+}
