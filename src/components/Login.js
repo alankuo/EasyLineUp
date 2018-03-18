@@ -1,7 +1,12 @@
 
 import React from 'react';
-import {Link} from 'react-router';
-import data from '../account.js';
+import App from './App';
+import {Link,Redirect} from 'react-router';
+import data from '../account';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { loginAction} from '../actions';
+import Route from './Route';
 
 class Login extends React.Component{
 
@@ -29,25 +34,23 @@ class Login extends React.Component{
   validateLogin(e){
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-    let verification = false;
-    let veriUser = "";
-    let veriPassword = "";
-    for(let i=0; i<data.length;i++){
-      veriUser = data[i].name;
-      veriPassword = data[i].password;
-      if(veriUser == username && veriPassword == password){
-        verification = true;
-        alert ("Login successfully");
-        this.setState({routeAddress:"/"});
-      }
-    }
-    if(!verification){
-      alert("username and password do not match!");
-      e.preventDefault();
-    }
+    e.preventDefault();
+    this.props.login(username,password);
   }
 
   render(){
+    if(this.props.verification === undefined){
+
+    }
+    else if(!this.props.verification){
+      alert("username and password do not match!");
+
+    }
+    else {
+      // alert("successfully log in");
+      console.log('log in');
+      this.props.history.push('/');
+    }
     return (
       <div>
         <h1 className="welcome-msg">Welcome to <span className="primary">EasyLineUp!!</span></h1>
@@ -94,4 +97,16 @@ class Login extends React.Component{
   }
 }
 
-export default Login;
+// export default Login;
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    verification: state.login.verification,
+  };
+}
+
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({login: loginAction}, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Login);

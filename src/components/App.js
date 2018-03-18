@@ -2,8 +2,12 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { loginAction, logoutAction } from '../actions';
 
-export default class App extends React.Component{
+
+class App extends React.Component{
   constructor(props){
     super(props);
 
@@ -40,11 +44,16 @@ export default class App extends React.Component{
   }
 
   resetEverything(){
-    this.setState({route:"",selectedTime:''});
+    this.props.logout();
+    // this.setState({route:"",selectedTime:''});
     // console.log("home reset");
   }
 
   render(){
+    if(this.props.verification !== true){
+      window.location = '/login';
+      return;
+    }
     return (
       <div>
         <Header pageName="" resetEverything={this.resetEverything}/>
@@ -54,3 +63,16 @@ export default class App extends React.Component{
     );
   }
 }
+
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    verification: state.login.verification,
+  };
+}
+
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({login: loginAction, logout: logoutAction}, dispatch);
+}
+
+export default connect(mapStateToProps)(App);
