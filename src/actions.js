@@ -1,5 +1,6 @@
 // log in
 import data from './account';
+import UserApi from './api/mockUserApi';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
 
@@ -13,19 +14,29 @@ export function loginAction(username, password){
     let veriUser = "";
     let veriPassword = "";
 
-    for (let i=0; i<data.length;i++) {
-        veriUser = data[i].name;
-        veriPassword = data[i].password;
-        if (veriUser === username && veriPassword === password) {
+    let obj = {};
 
-            return {
-                type: LOG_IN_SUCCESS,
-            }
-        }
-    }
-    return {
-        type: LOG_IN_FAILURE,
-    };
+    (async function(username, password) {
+        await UserApi.checkLogin(username, password);
+        console.log("Yey, story successfully loaded!");
+      }(username, password)
+        .then(function(result){
+            obj = {type:LOG_IN_SUCCESS};
+            console.log(obj);
+        })
+        .catch(function(err){
+            obj = {type:LOG_IN_FAILURE};
+            console.log(obj);
+        })
+    );
+
+    UserApi.checkLogin(username, password)
+
+
+
+
+    console.log(obj);
+    return obj;
 
 }
 
