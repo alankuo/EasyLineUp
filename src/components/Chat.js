@@ -4,6 +4,7 @@ import icon1 from '../img/icon.jpeg';
 import icon2 from '../img/icon2.jpg';
 import icon3 from '../img/icon3.jpg';
 import {Link} from 'react-router';
+const css = require('../css/localChat.css');
 
 export default class Chat extends React.Component{
     constructor() {
@@ -73,9 +74,9 @@ export default class Chat extends React.Component{
 
     render() {
         return (
-            <div className="container window">
+            <div className={css.container}>
                 <Link id="back_btn" to="/">&lt;Back</Link>
-                <div className="navi">
+                <div className={css.navi}>
                     <h1>Chat Room 3</h1>
                 </div>
                 <ul className="user_queue">
