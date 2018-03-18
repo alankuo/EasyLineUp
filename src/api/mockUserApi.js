@@ -87,7 +87,7 @@ class UserApi {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
           const indexOfUserToUpdate = users.findIndex(user => {
-            user.username == username;
+            return user.username === username;
           });
 
           if(indexOfUserToUpdate != -1){
@@ -104,7 +104,7 @@ class UserApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const indexOfUserToUpdate = users.findIndex(user => {
-          user.username == username;
+            return user.username == username;
         });
         if(indexOfUserToUpdate != -1){
             users[indexOfUserToUpdate].email = email;

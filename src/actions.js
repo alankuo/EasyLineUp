@@ -3,11 +3,9 @@ import data from './account';
 import UserApi from './api/mockUserApi';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
-
+export const RESET_VERIFICATION = 'RESET_VERIFICATION';
 export const UPDATE_TIME = 'UPDATE_TIME';
 export const REMOVE_FEATURE = 'REMOVE_FEATURE';
-
-
 
 export function loginAction(username, password){
     console.log('executed');
@@ -16,27 +14,16 @@ export function loginAction(username, password){
 
     let obj = {};
 
-    (async function(username, password) {
-        await UserApi.checkLogin(username, password);
-        console.log("Yey, story successfully loaded!");
-      }(username, password)
+    return function(dispatch){
+        return UserApi.checkLogin(username, password)
         .then(function(result){
-            obj = {type:LOG_IN_SUCCESS};
-            console.log(obj);
+            dispatch({type: LOG_IN_SUCCESS, user: result});
         })
         .catch(function(err){
-            obj = {type:LOG_IN_FAILURE};
-            console.log(obj);
-        })
-    );
+            dispatch({type: LOG_IN_FAILURE});
+        });
+    }
 
-    UserApi.checkLogin(username, password)
-
-
-
-
-    console.log(obj);
-    return obj;
 
 }
 
@@ -44,3 +31,6 @@ export function logoutAction(){
     loginAction();
 }
 
+export function resetAction(){
+    return {type: RESET_VERIFICATION}
+}

@@ -1,6 +1,7 @@
 import {
     LOG_IN_SUCCESS,
     LOG_IN_FAILURE,
+    RESET_VERIFICATION,
 } from './actions';
 import { combineReducers } from 'redux';
 
@@ -15,13 +16,21 @@ function login(state = {}, action) {
 
         const a = Object.assign({},state,{
             verification: true,
+            user: action.user,
         });
-        console.log(a);
         return a;
       }
       case LOG_IN_FAILURE: {
+
         return Object.assign({},state,{
             verification: false,
+            user: null,
+        });
+      }
+      case RESET_VERIFICATION: {
+        return Object.assign({},state,{
+            verification: undefined,
+            user: null,
         });
       }
       default: {

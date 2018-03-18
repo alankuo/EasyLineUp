@@ -3,7 +3,8 @@
   "env": {
     "development": {
       "presets": ["react-hmre"],
-      "plugins": ["syntax-async-functions"]
     }
-  }
+  },
+  "plugins": ["syntax-async-functions","transform-async-to-generator","transform-async-to-generator"]
+
 }

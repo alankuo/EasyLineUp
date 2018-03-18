@@ -5,7 +5,7 @@ import {Link,Redirect} from 'react-router';
 import data from '../account';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { loginAction} from '../actions';
+import { loginAction, resetAction} from '../actions';
 import Route from './Route';
 
 class Login extends React.Component{
@@ -44,7 +44,7 @@ class Login extends React.Component{
     }
     else if(!this.props.verification){
       alert("username and password do not match!");
-
+      this.props.reset();
     }
     else {
       // alert("successfully log in");
@@ -106,7 +106,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch){
-  return bindActionCreators({login: loginAction}, dispatch);
+  return bindActionCreators({login: loginAction, reset:resetAction}, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(Login);
