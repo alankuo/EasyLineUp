@@ -50,7 +50,8 @@ class App extends React.Component{
   }
 
   render(){
-    if(this.props.verification !== true){
+    if(this.props.verification !== true && localStorage["username"]==undefined){
+    // if(localStorage["username"]==undefined){
       window.location = '/login';
       return;
     }

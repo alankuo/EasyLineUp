@@ -33,12 +33,6 @@ class Header extends React.Component {
   }
 
   updateValue(value) {
-    // console.log("target value: " + value);
-    // this.setState({previousPage: this.state.currentPage, currentPage: value});
-    // const element = document.getElementById(this.state.previousPage);
-    // element.classList.remove("active");
-    // const element2 = document.getElementById(this.state.currentPage);
-    // element2.classList.add("active");
   }
 
   render(){

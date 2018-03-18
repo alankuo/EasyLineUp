@@ -3,6 +3,9 @@ import React from 'react';
 import {Link} from 'react-router';
 import Header from './Header';
 import Footer from './Footer';
+import { loginAction, updateUser} from '../actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class Profile extends React.Component{
   // var  = document.getElementById("password");
@@ -23,20 +26,28 @@ class Profile extends React.Component{
     this.saveProfile = this.saveProfile.bind(this);
   }
   componentDidMount() {
-    if (localStorage["username"] == undefined) {
-      document.getElementsByName("username")[0].value = "";
-      document.getElementsByName("phone")[0].value = "";
-      document.getElementsByName("email")[0].value = "";
-    } else {
-      document.getElementsByName("username")[0].value = localStorage["username"];
-      document.getElementsByName("phone")[0].value = localStorage["phone"];
-      document.getElementsByName("email")[0].value = localStorage["email"];
-    }
+    // if (localStorage["username"] == undefined) {
+    //   document.getElementsByName("username")[0].value = "";
+    //   document.getElementsByName("phone")[0].value = "";
+    //   document.getElementsByName("email")[0].value = "";
+    // } else {
+    //   document.getElementsByName("username")[0].value = localStorage["username"];
+    //   document.getElementsByName("phone")[0].value = localStorage["phone"];
+    //   document.getElementsByName("email")[0].value = localStorage["email"];
+    // }
+    document.getElementsByName("username")[0].value = localStorage["username"];
+    document.getElementsByName("phone")[0].value = localStorage["phone"];
+    document.getElementsByName("email")[0].value = localStorage["email"];
   }
+
   saveProfile(e){
-    localStorage.setItem("username",document.getElementsByName("username")[0].value);
-    localStorage.setItem("phone",document.getElementsByName("phone")[0].value);
-    localStorage.setItem("email",document.getElementsByName("email")[0].value);
+    let username = document.getElementsByName("username")[0].value;
+    let phone = document.getElementsByName("phone")[0].value;
+    let email = document.getElementsByName("email")[0].value;
+    localStorage.setItem("username", username);
+    localStorage.setItem("phone", phone);
+    localStorage.setItem("email", email);
+    this.props.update(username, phone, email);
     alert("Profile has been saved!");
   }
 
@@ -73,4 +84,15 @@ class Profile extends React.Component{
   }
 }
 
-export default Profile;
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    verification: state.login.verification
+  };
+}
+
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({login: loginAction, update: updateUser}, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Profile);

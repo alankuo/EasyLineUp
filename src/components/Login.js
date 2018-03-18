@@ -49,6 +49,9 @@ class Login extends React.Component{
     else {
       // alert("successfully log in");
       console.log('log in');
+      localStorage.setItem("username",this.props.user);
+      localStorage.setItem("phone",this.props.phone);
+      localStorage.setItem("email",this.props.email);
       this.props.history.push('/');
     }
     return (
@@ -100,8 +103,17 @@ class Login extends React.Component{
 // export default Login;
 function mapStateToProps(state) {
   console.log(state);
+  let info1, info2, info3;
+  if(state.login.user!=undefined){
+    info1 = state.login.user.username;
+    info2 = state.login.user.phone;
+    info3 = state.login.user.email;
+  }
   return {
     verification: state.login.verification,
+    user: info1,
+    phone: info2,
+    email: info3
   };
 }
 

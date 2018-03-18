@@ -47,7 +47,7 @@ class UserApi {
         if(indexOfUserToUpdate == -1) {
             reject(`username ${username} existed. Please change another one`);
         } else {
-            user = {first_name, last_name, username, password, email, phone};
+            let user = {first_name, last_name, username, password, email, phone};
             users.push(user);
             resolve(Object.assign([], users));
         }
@@ -100,16 +100,19 @@ class UserApi {
     });
   }
 
-  static updateUser(username, email, phone) {
+  static updateUser(username, phone, email) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const indexOfUserToUpdate = users.findIndex(user => {
             return user.username == username;
         });
         if(indexOfUserToUpdate != -1){
-            users[indexOfUserToUpdate].email = email;
-            users[indexOfUserToUpdate].phone = phone;
-            resolve();
+          // console.log("UPDATING");
+          // console.log("current phone: " , users[indexOfUserToUpdate].phone);
+          // console.log("new phone: " , phone);
+          users[indexOfUserToUpdate].email = email;
+          users[indexOfUserToUpdate].phone = phone;
+          resolve();
         }
         reject('no users found');
 
