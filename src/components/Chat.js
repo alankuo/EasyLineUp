@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/chat.css';
-import icon1 from '../img/icon.jpeg';
+import icon1 from '../img/icon.jpg';
 import icon2 from '../img/icon2.jpg';
 import icon3 from '../img/icon3.jpg';
 import {Link} from 'react-router';

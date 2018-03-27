@@ -6,7 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import msg from '../img/msg.jpg';
 import icon3 from '../img/icon3.jpg';
-import icon from '../img/icon.jpeg';
+import icon from '../img/icon.jpg';
 
 export default class Driver extends React.Component{
 

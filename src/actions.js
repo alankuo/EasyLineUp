@@ -19,7 +19,6 @@ export function loginAction(username, password){
         });
     };
 
-
 }
 
 export function logoutAction(){

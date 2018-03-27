@@ -40,7 +40,7 @@ class Login extends React.Component{
 
   render(){
     if(this.props.verification === undefined){
-
+      console.log();
     }
     else if(!this.props.verification){
       alert("username and password do not match!");
@@ -64,14 +64,7 @@ class Login extends React.Component{
             </div>
 
             <form id="form_id" method="post" name="myform">
-              <div>
-                <label>Who Are You:</label>
-                <input type="radio" id="passenger" name="identity" value="passenger"></input>
-                <label>Student</label>
 
-                <input type="radio" id="driver" name="identity" value="driver"></input>
-                <label>Driver</label>
-              </div>
 
               <div className="input-group">
                 <label>Username</label>

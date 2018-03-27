@@ -27,13 +27,14 @@ function login(state = {}, action) {
 
         return Object.assign({},state,{
             verification: false,
-            user: null
+            user: undefined
         });
       }
       case RESET_VERIFICATION: {
+        console.log("IN RESET_VERIFICATION");
         return Object.assign({},state,{
             verification: undefined,
-            user: null
+            user: undefined
         });
       }
       case PROFILE_CHANGE_SUCCESS: {
